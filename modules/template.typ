@@ -34,7 +34,7 @@
       #line(length: 11.35cm, stroke: rgb("#a6a6a6"))
       #v(0.1cm)
       
-      #text(size: 24pt)[#curso]
+      #text(size: 18pt)[#curso]
       #v(0.1cm)
       
       #line(length: 11.35cm, stroke: rgb("#a6a6a6"))
