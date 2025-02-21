@@ -1,7 +1,8 @@
 // main.typ
 #import "modules/template.typ": project
 #import "modules/biz_canvas.typ": canvas
-#import "referencias.typ": references, print-references, cite
+#import "modules/references.typ": (add-reference, cite, print-references)
+#include "CPP1_Ruiz_Alva_Jerson_Enmanuel/referencias.typ"
 
 #show: project.with(
   title: "Plan de iniciativa empresarial y modelo de negocio",
@@ -16,18 +17,18 @@
 #pagebreak()
 
 = Introducción
-#include "sections/introduction.typ"
+#include "CPP1_Ruiz_Alva_Jerson_Enmanuel/introduction.typ"
 
 = Parte A: Caso de Estudio Hershey's
-#include "sections/part_a.typ"
+#include "CPP1_Ruiz_Alva_Jerson_Enmanuel/part_a.typ"
 
 = Parte B: Identificación de Ideas
-#include "sections/part_b.typ"
+#include "CPP1_Ruiz_Alva_Jerson_Enmanuel/part_b.typ"
 
 = Business Model Canvas
-#include "sections/bmc.typ"
+#include "CPP1_Ruiz_Alva_Jerson_Enmanuel/bmc.typ"
 
 = Conclusiones
-#include "sections/conclusions.typ"
+#include "CPP1_Ruiz_Alva_Jerson_Enmanuel/conclusions.typ"
 
 #print-references()
