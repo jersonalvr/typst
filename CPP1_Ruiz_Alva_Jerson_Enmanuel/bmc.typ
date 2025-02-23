@@ -1,8 +1,8 @@
-#import "../modules/biz_canvas.typ": canvas
+#import "../modules/biz_canvas.typ": biz_canvas
 
 Para este proyecto, desarrollaremos el modelo de negocio de *HealthAI Analytics*, una plataforma que utiliza inteligencia artificial para predecir riesgos de salud.
 
-#canvas(
+#biz_canvas(
   title: [= Modelo de Negocio: HealthAI Analytics],
   business: [HealthAI Analytics - Predicción de Riesgos de Salud],
   problems: [

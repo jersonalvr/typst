@@ -1,7 +1,7 @@
 // main.typ
 #import "modules/template.typ": project
-#import "modules/biz_canvas.typ": canvas
-#import "modules/references.typ": (add-reference, cite, print-references)
+#import "modules/biz_canvas.typ": biz_canvas
+#import "modules/references.typ": *
 #include "CPP1_Ruiz_Alva_Jerson_Enmanuel/referencias.typ"
 
 #show: project.with(

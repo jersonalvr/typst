@@ -1,6 +1,6 @@
 #import "@preview/tablex:0.0.9": tablex, rowspanx, colspanx, hlinex, cellx
 
-#let canvas(
+#let biz_canvas(
   title:[],
   business:[],
   problems:[],
@@ -18,13 +18,13 @@
     flipped: true,
     fill: rgb("ffffff"),
     margin: (
-      top: 3cm,    // Más espacio para el encabezado
-      bottom: 3cm, // Más espacio para el pie de página
-      left: 2cm,   // Margen izquierdo ajustado
-      right: 2cm   // Margen derecho ajustado
+      top: 3cm,
+      bottom: 3cm,
+      left: 2cm,
+      right: 2cm
     )
   )
-  set text(font: "Arial", size: 9.5pt)
+  set text(font: "Arial", size: 9pt)
   
   let colors = (
     problems: rgb("#FFE5E5"),
@@ -38,7 +38,7 @@
     revenues: rgb("#E5FFE5")
   )
   pad(x:2em, top:4em, bottom: 3em)[
-    #place(dy:-3em, title)
+    #place(dy:-3em, dx: 0em, align(left)[#text(size: 14pt)[#title]])
     #place(left, dy:-4em, dx: 15.8cm, box(
       fill: rgb("#F8F9FA"),
       radius: 1em,
@@ -46,7 +46,7 @@
       height: 1cm,
       inset: 1em,
       stroke: 0.5pt,
-      business))
+      align(center + horizon, business)))
     #tablex(
       columns: (2fr, 2fr, 1fr, 1fr, 2fr, 2fr),
       rows: (1fr, 1fr, 1fr),
