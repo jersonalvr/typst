@@ -24,7 +24,7 @@
       right: 2cm
     )
   )
-  set text(font: "Arial", size: 9pt)
+  set text(font: "Arial", size: 9.4pt)
   
   let colors = (
     problems: rgb("#FFE5E5"),

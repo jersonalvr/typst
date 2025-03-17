@@ -97,16 +97,29 @@
   }
 }
 
-// Función para imprimir referencias
+// Función para imprimir referencias con formato APA
 #let print-references() = {
   context {
     let refs = references.get()
     [= Referencias]
     
-    for (key, ref) in refs {
-      (reference-types.at(ref.type).format)(ref)
-      linebreak()
-    }
+    // Configurar el bloque de referencias con el formato APA
+    block(
+      spacing: 1.5em, // Espacio entre referencias (APA requiere doble espacio)
+      {
+        for (key, ref) in refs {
+          // Crear un párrafo con sangría francesa (hanging indent) para cada referencia
+          par(
+            hanging-indent: 1em,
+            first-line-indent: 0em,
+            justify: true,
+            {
+              (reference-types.at(ref.type).format)(ref)
+            }
+          )
+        }
+      }
+    )
   }
 }
 

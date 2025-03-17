@@ -1,4 +1,13 @@
-// resumen.typ
+#set par(justify: true) // Establece la justificación para todo el documento
+
+#show heading: it => {
+  v(2.5em)
+  align(center, it)
+  v(1.5em) // Añade espacio vertical después del título
+}
+
+= Resumen Ejecutivo
+
 *Idea de Negocio:* Plataforma de Inteligencia Artificial para la optimización de cultivos en pequeños agricultores peruanos.
 
 *Objetivo Principal:* Reducir pérdidas agrícolas mediante:
@@ -25,6 +34,10 @@
 - Creación de empleos tecnológicos en zonas rurales
 - Preservación de prácticas agrícolas tradicionales mediante digitalización
 
+#pagebreak()
+
+= Executive Summary
+
 *Business Idea:* Artificial Intelligence Platform for Crop Optimization for Small Peruvian Farmers
 
 *Main Objective*: Reduce agricultural losses through:
@@ -50,3 +63,5 @@
 - 50% reduction in pesticide use with early detection
 - Creation of technological jobs in rural areas
 - Preservation of traditional agricultural practices through digitization
+
+#pagebreak()

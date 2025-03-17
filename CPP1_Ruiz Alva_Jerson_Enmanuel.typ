@@ -13,7 +13,7 @@
 )
 
 // Table of contents
-#outline(title: "Índice", indent: true)
+#outline(title: "Índice", indent: auto)
 #pagebreak()
 
 = Introducción

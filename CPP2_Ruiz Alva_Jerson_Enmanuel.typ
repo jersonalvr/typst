@@ -13,7 +13,7 @@
 )
 
 // Índice
-#outline(title: "Índice", indent: true)
+#outline(title: "Índice", indent: auto)
 #pagebreak()
 
 = Resumen Ejecutivo
