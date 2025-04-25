@@ -1,12 +1,9 @@
-En el presente trabajo se desarrolla un análisis detallado sobre oportunidades de negocio en el campo de la ciencia de datos e inteligencia artificial, comenzando con el estudio del caso Hershey's como ejemplo de innovación y crecimiento empresarial. Este análisis nos permitirá comprender mejor cómo una empresa puede evolucionar y adaptarse al mercado, sirviendo como base para nuestra propia propuesta de negocio.
+// referencias.typ
+#import "../modules/references.typ": (add-reference, cite, print-references)
+#include "referencias.typ"
 
-En la era digital actual, la intersección entre la tecnología y los diferentes sectores empresariales está creando oportunidades sin precedentes para la innovación y el emprendimiento. Este trabajo presenta un análisis comprehensivo que parte del estudio de un caso empresarial exitoso tradicional -Hershey's- para luego explorar las posibilidades que ofrecen la ciencia de datos y la inteligencia artificial en la creación de nuevos modelos de negocio.
+== Evolución IA: Definición, Historia, Relevancia
 
-La transformación digital está redefiniendo cómo las empresas crean y entregan valor a sus clientes. Al examinar el caso Hershey's, podemos extraer lecciones valiosas sobre innovación, escalabilidad y adaptación al mercado que siguen siendo relevantes en la era digital. Estas lecciones, combinadas con las posibilidades que ofrecen las tecnologías emergentes, nos permiten identificar y desarrollar oportunidades de negocio prometedoras.
+=== Introducción
 
-Este documento se estructura en tres partes principales:
-- Un análisis detallado del caso Hershey's, enfocándose en sus estrategias de innovación y crecimiento
-- La identificación y evaluación de oportunidades de negocio en el campo de la ciencia de datos e IA
-- El desarrollo detallado de un modelo de negocio utilizando la metodología Business Model Canvas
-
-A lo largo del documento, examinaremos primero las estrategias y decisiones que llevaron a Hershey's al éxito, seguido de la identificación de oportunidades de negocio en el sector tecnológico actual. Finalmente, presentaremos nuestro modelo de negocio utilizando la metodología Business Model Canvas, detallando cada uno de sus componentes clave.
+La inteligencia artificial (IA) ha emergido como una fuerza transformadora en el panorama tecnológico y social contemporáneo. Su capacidad para simular procesos cognitivos humanos y automatizar tareas complejas ha permeado diversos sectores, desde la medicina y las finanzas hasta el transporte y el entretenimiento como señalan #cite("1") en su investigación. Este informe tiene como objetivo ofrecer una exploración exhaustiva de la evolución de la IA y su creciente relevancia. Para ello, se describirán los conceptos fundamentales de la IA, basándose en definiciones académicas rigurosas y proporcionando ejemplos prácticos que ilustren su aplicación en el mundo real. #cite("2", "3") Además, se presentará una línea de tiempo detallada que trace el desarrollo de la IA desde sus inicios hasta los avances más recientes. #cite("4", "5") Finalmente, se incluirá un ensayo crítico que analice el impacto actual y futuro de la IA en la economía, la sociedad, la política y la ética, destacando tanto su potencial revolucionario como los desafíos y riesgos que plantea. #cite("6", "7", "8", "9") La naturaleza interdisciplinaria de la IA, que se nutre de campos como la informática, la lingüística, la neurociencia y la filosofía, subraya su complejidad y la amplitud de sus implicaciones. #cite("10", "11", "12", "13") A través de este análisis, se busca proporcionar una comprensión profunda y matizada de la IA para un público informado, facilitando una apreciación de su papel crucial en la configuración de nuestro futuro. #cite("1", "14", "15")

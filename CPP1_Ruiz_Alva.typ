@@ -5,11 +5,11 @@
 #include "CPP1_Ruiz_Alva_Jerson_Enmanuel/referencias.typ"
 
 #show: project.with(
-  title: "Plan de iniciativa empresarial y modelo de negocio",
+  title: "Evolución de la IA y su relevancia",
   idl: "1",
-  curso: "Iniciativa Empresarial",
+  curso: "Introducción a la Inteligencia Artificial",
   estudiantes: ("Jerson Ruiz Alva",),
-  profesores: ("Jorge Martin Vega Rosales",)
+  profesores: ("Gino Joel Taipe Miranda",)
 )
 
 // Table of contents
@@ -19,14 +19,9 @@
 = Introducción
 #include "CPP1_Ruiz_Alva_Jerson_Enmanuel/introduction.typ"
 
-= Parte A: Caso de Estudio Hershey's
 #include "CPP1_Ruiz_Alva_Jerson_Enmanuel/part_a.typ"
 
-= Parte B: Identificación de Ideas
 #include "CPP1_Ruiz_Alva_Jerson_Enmanuel/part_b.typ"
-
-= Business Model Canvas
-#include "CPP1_Ruiz_Alva_Jerson_Enmanuel/bmc.typ"
 
 = Conclusiones
 #include "CPP1_Ruiz_Alva_Jerson_Enmanuel/conclusions.typ"

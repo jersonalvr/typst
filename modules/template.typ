@@ -20,7 +20,7 @@
   )
   
   set text(font: "Arial", size: 12pt)
-
+  set par(justify: true)
   // Cover page with header and footer
   page(
     margin: (x: 3cm, y: 2cm),

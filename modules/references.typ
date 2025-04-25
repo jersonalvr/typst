@@ -1,4 +1,3 @@
-// modules\references.typ
 #let reference-types = (
   article: (
     required: ("author", "title", "journal", "year"),
@@ -85,15 +84,30 @@
   })
 }
 
-// Función para citar
-#let cite(key) = {
+// Función para citar múltiples referencias
+#let cite(..keys) = {
   context {
     let refs = references.get()
-    if key not in refs {
-      panic("Referencia no encontrada: " + key)
+    
+    // Verificar que cada clave exista
+    for key in keys.pos() {
+      if key not in refs {
+        panic("Referencia no encontrada: " + key)
+      }
     }
-    let ref = refs.at(key)
-    [#ref.author, #ref.year]
+    
+    // Si solo hay una referencia, mostrarla normalmente
+    if keys.pos().len() == 1 {
+      let key = keys.pos().first()
+      let ref = refs.at(key)
+      [#ref.author, #ref.year]
+    } else {
+      // Para múltiples referencias, mostrarlas separadas por punto y coma
+      [(] + keys.pos().map(key => {
+        let ref = refs.at(key)
+        [#ref.author, #ref.year]
+      }).join([; ]) + [)]
+    }
   }
 }
 

@@ -1,53 +1,68 @@
-== ¿Cómo aprendió Hershey's a producir chocolate de leche?
+#import "../modules/references.typ": (add-reference, cite, print-references)
+#include "referencias.typ"
 
-Milton Hershey revolucionó la industria del chocolate a través de un proceso meticuloso de aprendizaje e innovación:
+== Conceptos Fundamentales de la Inteligencia Artificial
 
-=== Viaje de Aprendizaje
-- Realizó múltiples viajes a Europa, especialmente a Suiza y Alemania
-- Estudió las técnicas tradicionales de los maestros chocolateros europeos
-- Adquirió maquinaria especializada y contrató expertos europeos
+=== Inteligencia Artificial (IA) / Artificial Intelligence (AI)
 
-=== Proceso de Experimentación
-- Desarrolló más de 100 fórmulas diferentes antes de encontrar la correcta
-- Experimentó con diversos tipos de leche y métodos de procesamiento
-- Innovó en el proceso de conchado para adaptarlo a la producción masiva
+==== Definiciones Académicas
 
-=== Innovaciones Técnicas
-- Creó un nuevo método para estabilizar la leche en el chocolate
-- Desarrolló técnicas de templado específicas para el chocolate con leche
-- Diseñó sistemas de control de temperatura precisos
+La inteligencia artificial (IA) se define ampliamente como la creación de sistemas computacionales capaces de realizar tareas que normalmente requieren inteligencia humana. #cite("3", "16", "17") Esta definición abarca un espectro de enfoques y técnicas, desde la programación basada en lógica y los sistemas expertos hasta el aprendizaje automático y las redes neuronales. #cite("2") En sus inicios, el objetivo principal de la IA era emular la inteligencia general humana, como se menciona en #cite("18"). Sin embargo, con el tiempo, el campo se ha centrado en abordar problemas más específicos y prácticos, utilizando métodos y modelos de la estadística, la lógica difusa y la teoría de la probabilidad. #cite("4") En su definición más simple, la IA comprende cualquier tecnología o máquina que pueda llevar a cabo tareas complejas típicamente asociadas con la inteligencia humana, incluyendo la resolución de problemas, la planificación, el razonamiento y la toma de decisiones. #cite("19") La IA es un concepto amplio que engloba la creación de sistemas que pueden simular el pensamiento y la resolución de problemas humanos a través de diversos métodos, incluyendo el aprendizaje automático. #cite("2")
 
-== ¿Qué pasos tomó para crecer como empresa?
+==== Ejemplos Prácticos
 
-=== 1. Integración Vertical
-*Cadena de Suministro:*
-- Adquirió más de 6,000 acres de tierra para granjas lecheras
-- Estableció una red de agricultores locales
-- Construyó instalaciones de procesamiento de azúcar
+La IA se manifiesta en numerosas aplicaciones prácticas que ya forman parte de nuestra vida cotidiana. Los asistentes virtuales personales como Siri y Alexa, mencionados en #cite("1", "11"), son ejemplos claros de IA que responden a comandos de voz y realizan diversas funciones, refinando sus respuestas basadas en interacciones pasadas para crear una experiencia de usuario personalizada y eficiente. #cite("1") Los sistemas de recomendación utilizados por plataformas como Netflix y Amazon, también citados en #cite("1"), emplean IA para analizar las preferencias de los usuarios y sugerir contenido relevante, mejorando la experiencia del usuario a través de sugerencias personalizadas de contenido y productos. #cite("1") Además, la IA se aplica en una amplia gama de sectores, incluyendo la salud, las finanzas, el transporte y la educación. #cite("15", "20") En el sector de la salud, la IA ayuda en el diagnóstico de enfermedades mediante el análisis de imágenes médicas. #cite("1") En finanzas, se utiliza para la detección de fraude y la gestión de riesgos. #cite("21") En el transporte, la IA es fundamental para el desarrollo de vehículos autónomos. #cite("20")
 
-*Producción y Distribución:*
-- Desarrolló su propia red ferroviaria
-- Construyó almacenes refrigerados estratégicamente ubicados
-- Creó un sistema de distribución directo a minoristas
+=== Aprendizaje Automático (AA) / Machine Learning (ML)
 
-=== 2. Innovación en Producción
-*Automatización:*
-- Diseñó líneas de producción automatizadas
-- Implementó sistemas de control de calidad estadístico
-- Desarrolló máquinas especializadas para el moldeo del chocolate
+==== Definiciones Académicas
 
-*Eficiencia Operativa:*
-- Estableció procesos de producción continua
-- Implementó sistemas de recuperación de calor
-- Optimizó el flujo de materiales en la planta
+El aprendizaje automático (AA), o machine learning (ML), es un subcampo de la IA que se centra en la capacidad de las computadoras para aprender y tomar decisiones sin ser programadas explícitamente. #cite("1", "3") Este proceso de aprendizaje se basa en datos, donde el sistema identifica patrones, reconoce tendencias y refina su rendimiento con el tiempo. #cite("1") Arthur Samuel, pionero en la informática, definió el ML en 1959 como "el campo de estudio que da a las computadoras la capacidad de aprender sin ser programadas explícitamente". #cite("2") Esta idea fue reforzada por Herbert Simon, quien explicó que el ML se trata fundamentalmente de mejorar el rendimiento a través de la experiencia, tal como los humanos mejoran en las tareas mediante la práctica. #cite("2") Tom M. Mitchell proporcionó una definición más formal, citada en #cite("4"), que establece que un programa de computadora aprende de la experiencia con respecto a una clase de tareas y una medida de rendimiento si su desempeño en dichas tareas mejora con la experiencia. #cite("16") describe el ML como el proceso de utilizar computadoras para detectar patrones en grandes conjuntos de datos y luego realizar predicciones basadas en lo que la computadora aprende de esos patrones, considerándolo un tipo específico y limitado de IA. Además, #cite("17") señala que el ML implica algoritmos sofisticados entrenados para clasificar información, identificar patrones y hacer predicciones en grandes conjuntos de datos sin ser programados explícitamente. La Universidad de California en Berkeley, según #cite("22"), desglosa el sistema de aprendizaje de un algoritmo de ML en tres partes principales: un proceso de decisión, una función de error y un proceso de optimización del modelo. En general, los algoritmos de ML se utilizan para realizar una predicción o clasificación basada en datos de entrada, que pueden estar etiquetados o no etiquetados. #cite("22")
 
-=== 3. Desarrollo de Comunidad
-*Infraestructura Social:*
-- Construyó viviendas de calidad para trabajadores
-- Estableció escuelas y centros de formación
-- Creó instalaciones recreativas y culturales
+==== Ejemplos Prácticos
 
-*Beneficios Laborales:*
-- Implementó programas de pensiones
-- Ofreció seguros de salud comprehensivos
-- Desarrolló programas de capacitación continua
+El ML se utiliza en una variedad de aplicaciones prácticas. Los filtros de spam de correo electrónico, mencionados en #cite("1", "2"), son entrenados con miles de correos electrónicos etiquetados como spam o no spam para aprender a identificar mensajes no deseados analizando palabras, frases o remitentes comúnmente asociados con el spam. #cite("2") Los motores de recomendación en plataformas como Netflix y Amazon, como se indica en #cite("1"), analizan las preferencias de los usuarios para sugerir contenido relevante. Los modelos de ML también desempeñan un papel crucial en el diagnóstico médico, como se ilustra en #cite("1", "17"), al analizar imágenes médicas para detectar enfermedades y permitir la formulación de planes de tratamiento personalizados basados en los datos del paciente. #cite("1") Los automóviles autónomos, según #cite("2"), aprenden a navegar observando diferentes situaciones de conducción y ajustando sus acciones en función de los resultados. Un ejemplo específico en el campo de la medicina, proporcionado por #cite("16"), es la detección de cáncer en imágenes de tomografía computarizada (TC) mediante el aprendizaje de datos de entrenamiento etiquetados, donde el sistema aprende a reconocer tejido canceroso basándose en reglas creadas sobre la relación entre los datos de las imágenes y el conocimiento médico sobre la identificación del cáncer. #cite("16")
+
+=== Redes Neuronales (RN) / Neural Networks (NN)
+
+==== Definiciones Académicas
+
+Las redes neuronales (RN), o neural networks (NN), representan un enfoque específico dentro del campo del aprendizaje automático, inspiradas en la estructura y función del cerebro humano. #cite("23", "24", "25") #cite("23") define una red neuronal como un método dentro de la IA que permite a las computadoras procesar datos de manera similar al cerebro humano, siendo un tipo de proceso de ML conocido como aprendizaje profundo (deep learning). Este utiliza nodos o neuronas interconectados en una estructura de capas que imita el cerebro humano, creando un sistema adaptativo que permite a las computadoras aprender de sus errores y mejorar continuamente. #cite("23") #cite("26") describe una red neuronal como un programa o modelo de ML que toma decisiones de manera análoga al cerebro humano, utilizando procesos que imitan el funcionamiento de las neuronas biológicas para identificar fenómenos, sopesar opciones y llegar a conclusiones. #cite("25") las presenta como modelos computacionales inspirados en las redes neuronales biológicas, consistiendo en un grupo interconectado de nodos o neuronas artificiales que pueden aprender y modelar no linealidades y relaciones complejas. Según #cite("27"), las RN son un tipo particular de técnica de ML modelada en el cerebro, compuesta por nodos que realizan cálculos simples y donde el aprendizaje se refleja en los cambios en las conexiones entre estos nodos, a menudo estructuradas en capas de entrada, salida y una o más capas ocultas. #cite("28") las considera una metáfora del cerebro para el procesamiento de información, configuradas para aplicaciones específicas como el reconocimiento de patrones mediante un proceso de aprendizaje que ajusta las conexiones sinápticas que existen entre las neuronas.
+
+==== Ejemplos Prácticos
+
+Las redes neuronales se aplican en una variedad de tareas complejas. #cite("27") menciona el análisis de imágenes para identificar la retinopatía diabética como un ejemplo de su uso. El algoritmo de búsqueda de Google, según #cite("26"), es otro ejemplo conocido de una red neuronal en acción. En general, las RN son efectivas para tareas de reconocimiento de imágenes y voz, como se indica en #cite("24", "29"). También se utilizan en sistemas de recomendación de contenido, como los que se encuentran en plataformas de streaming, y en máquinas de imágenes médicas. #cite("24") Las redes neuronales profundas, con múltiples capas ocultas, son capaces de realizar tareas como resumir documentos o reconocer rostros con gran precisión. #cite("23") En la industria automotriz, las RN se utilizan en sistemas avanzados de asistencia al conductor (ADAS) para tareas como el reconocimiento de señales de tráfico y la detección de peatones. #cite("30")
+
+=== Procesamiento del Lenguaje Natural (PLN) / Natural Language Processing (NLP)
+
+==== Definiciones Académicas
+
+El procesamiento del lenguaje natural (PLN), o natural language processing (NLP), es un campo que se sitúa en la intersección de la informática, la lingüística y la inteligencia artificial, centrándose en cómo las computadoras pueden entender, procesar y manipular el lenguaje humano. #cite("10", "31", "32") #cite("33") lo define como una tecnología de aprendizaje automático que permite a las computadoras interpretar, manipular y comprender el lenguaje humano. #cite("10") amplía esta definición, indicando que el PLN aborda aspectos como la interpretación del significado semántico del lenguaje, la traducción entre idiomas y el reconocimiento de patrones en el lenguaje humano, utilizando métodos estadísticos, aprendizaje automático, redes neuronales y minería de texto. #cite("34") lo describe como el enfoque computarizado para analizar texto basado tanto en teorías como en tecnologías, y más formalmente, como un rango de técnicas computacionales teóricamente motivadas para analizar y representar textos que ocurren naturalmente en uno o más niveles de análisis lingüístico con el fin de lograr un procesamiento del lenguaje similar al humano para diversas tareas o aplicaciones. #cite("35") enfatiza que el PLN combina la lingüística computacional, el modelado basado en reglas del lenguaje humano, el modelado estadístico, el aprendizaje automático y el aprendizaje profundo para permitir que las computadoras reconozcan, comprendan y generen texto y voz. El objetivo del PLN es lograr un procesamiento del lenguaje similar al humano, aunque la comprensión completa del lenguaje sigue siendo un desafío. #cite("34")
+
+==== Ejemplos Prácticos
+
+El PLN impulsa numerosas aplicaciones que facilitan la interacción entre humanos y computadoras. Google Translate, mencionado en #cite("10"), es un ejemplo destacado de cómo el PLN se utiliza para la traducción automática entre idiomas, conservando la precisión contextual. #cite("33") Los filtros de spam de correo electrónico, como se indica en #cite("1", "11"), utilizan técnicas de PLN para identificar y bloquear mensajes no deseados analizando el contenido del mensaje. #cite("2") Los asistentes virtuales activados por voz, como se señala en #cite("1", "11"), dependen del PLN para comprender los comandos hablados y refinar sus respuestas basándose en interacciones pasadas. #cite("1") Los chatbots, que interactúan con los usuarios en lenguaje natural, también son una aplicación común del PLN, como se menciona en #cite("1", "32"), proporcionando respuestas similares a las humanas. #cite("32") Además, el PLN se utiliza para resumir documentos y extraer información clave de grandes cantidades de texto, como se describe en #cite("11", "35"). En el procesamiento de documentos, las herramientas de PLN pueden clasificar automáticamente, extraer información clave y resumir contenido, reduciendo el tiempo y los errores asociados con el manejo manual de datos. #cite("35")
+
+=== Visión por Computadora (VC) / Computer Vision (CV)
+
+==== Definiciones Académicas
+
+La visión por computadora (VC), o computer vision (CV), es un campo de la informática que se centra en capacitar a las computadoras para identificar y comprender objetos y personas en imágenes y videos, replicando la capacidad humana de ver y comprender lo que se ve. #cite("36") #cite("37") la define como un campo de la IA que entrena a las computadoras para interpretar y comprender el mundo visual mediante el uso de imágenes digitales de cámaras y videos, junto con modelos de aprendizaje profundo, permitiendo a las máquinas identificar y clasificar objetos con precisión y luego reaccionar a lo que "ven". #cite("38") describe la VC como la capacidad de las computadoras para entender y analizar contenido visual de la misma manera que los humanos, incluyendo tareas como el reconocimiento de objetos y rostros, la lectura de texto y la comprensión del contexto de una imagen o video. #cite("39") señala que la VC se ocupa de la extracción, el análisis y la comprensión automáticos de información útil a partir de imágenes o secuencias de imágenes, buscando automatizar tareas que el sistema visual humano puede realizar. Finalmente, #cite("40") indica que la VC utiliza la IA para aprender sobre elementos visuales y derivar conclusiones basadas en esa información, permitiendo a las computadoras "ver" de manera similar a la visión humana, aunque con la necesidad de una gran cantidad de datos de entrenamiento.
+
+==== Ejemplos Prácticos
+
+La visión por computadora tiene una amplia gama de aplicaciones prácticas. El reconocimiento facial para aplicaciones de seguridad, mencionado en #cite("37"), es un ejemplo común. La detección de objetos en vehículos autónomos, como se indica en #cite("39"), es una aplicación crucial en el campo del transporte, permitiendo a los vehículos identificar peatones, otros coches e infraestructura vial. #cite("41") En medicina, la VC se utiliza para el análisis de imágenes médicas en la detección de enfermedades, como se señala en #cite("1", "27", "42"), ayudando en el diagnóstico de enfermedades y permitiendo planes de tratamiento personalizados. #cite("1") También se emplea en la organización de contenido en plataformas de almacenamiento de fotos y redes sociales, como se menciona en #cite("36"), identificando personas u objetos en las fotos y organizándolos en consecuencia. Otra aplicación importante es el reconocimiento óptico de caracteres (OCR) para la extracción de texto de imágenes, como se describe en #cite("36", "39"), permitiendo la conversión de texto en imágenes a texto legible por máquina. En la fabricación, la VC se utiliza para la inspección de calidad, detectando defectos en los productos. #cite("38", "41")
+
+=== Inteligencia Artificial General (IAG) / Artificial General Intelligence (AGI)
+
+==== Definiciones Académicas
+
+La inteligencia artificial general (IAG), o artificial general intelligence (AGI), se refiere a la inteligencia hipotética de una máquina que posee la capacidad de comprender o aprender cualquier tarea intelectual que un ser humano puede realizar, imitando las habilidades cognitivas del cerebro humano. #cite("12") #cite("19") la describe como la capacidad de las tecnologías o máquinas para demostrar una inteligencia amplia a nivel humano, incluyendo la capacidad de aprender y aplicar su inteligencia para resolver problemas. #cite("43") la presenta como una investigación teórica de IA que busca crear software con inteligencia similar a la humana y capacidad de autoaprendizaje para realizar tareas para las que no fue específicamente entrenada, resolviendo problemas complejos en entornos y contextos para los que no fue programada. #cite("43") #cite("44") la define como un sistema de IA teórico con capacidades que rivalizarían con las de un humano en razonamiento, resolución de problemas, percepción, aprendizaje y comprensión del lenguaje. #cite("45") la considera un tipo de IA capaz de realizar todo el espectro de tareas cognitivamente exigentes con una competencia comparable o superior a la de los humanos, pudiendo generalizar conocimientos y transferir habilidades entre dominios. Finalmente, #cite("46") la define como la adaptación a entornos abiertos según ciertos principios utilizando recursos limitados, enfatizando el aprendizaje como una propiedad indispensable de la inteligencia general. La IAG es el objetivo inicial y final de la investigación en IA. #cite("46")
+
+==== Características Clave
+
+Las características clave de la IAG incluyen la capacidad de generalización, es decir, la habilidad de transferir conocimientos y habilidades aprendidas en un dominio a otro, permitiendo la adaptación efectiva a situaciones nuevas e imprevistas. #cite("12") También se destaca el conocimiento de sentido común, una vasta reserva de información sobre el mundo que incluye hechos, relaciones y normas sociales, lo que permite razonar y tomar decisiones basadas en una comprensión general del mundo. #cite("12") Otras características importantes son el razonamiento, la resolución de problemas, la percepción, el aprendizaje y la comprensión del lenguaje. #cite("44") Algunas definiciones incluso sugieren la inclusión de creatividad, razonamiento lógico, percepción sensorial y habilidades emocionales como la empatía, indistinguibles de las emociones humanas. #cite("44") Para ser considerada IAG, un sistema generalmente debe poder razonar, usar estrategia, resolver acertijos, hacer juicios bajo incertidumbre, representar conocimiento (incluido el sentido común), planificar, aprender, comunicarse en lenguaje natural e integrar estas habilidades para completar cualquier objetivo dado. #cite("45")
+
+==== Diferencias con otros tipos de IA
+
+La IAG se distingue de otros tipos de IA en su amplitud e inteligencia. La inteligencia artificial estrecha (IAE), o artificial narrow intelligence (ANI), se centra en tareas específicas, como el reconocimiento de imágenes o el procesamiento del lenguaje natural. #cite("12", "19") La inteligencia artificial generativa (IAGen), o generative artificial intelligence (GenAI), se especializa en la creación de contenido nuevo, como texto, imágenes y audio, basándose en los datos con los que ha sido entrenada. #cite("19") En contraste, la IAG busca una inteligencia integral a nivel humano que pueda aplicarse en diversos dominios sin necesidad de reprogramación específica para cada tarea. #cite("19", "45") A diferencia de la IAE, cuya competencia se limita a tareas bien definidas, un sistema de IAG puede generalizar conocimientos y transferir habilidades entre dominios. #cite("45") Incluso las aplicaciones avanzadas de IA generativa con memoria mejorada todavía se consideran IAE porque no se pueden reutilizar fácilmente para diferentes dominios sin un ajuste fino sustancial. #cite("43")
