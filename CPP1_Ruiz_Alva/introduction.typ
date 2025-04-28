@@ -1,0 +1,11 @@
+// referencias.typ
+#import "../modules/references.typ": (add-reference, cite, print-references)
+#include "referencias.typ"
+#import "../modules/web_resources.typ": *
+== Evolución IA: Definición, Historia, Relevancia
+
+=== Introducción
+
+La inteligencia artificial (IA) ha emergido como una fuerza transformadora en el panorama tecnológico y social contemporáneo. Su capacidad para simular procesos cognitivos humanos y automatizar tareas complejas ha permeado diversos sectores, desde la medicina y las finanzas hasta el transporte y el entretenimiento como señalan #cite("1") en su investigación. Este informe tiene como objetivo ofrecer una exploración exhaustiva de la evolución de la IA y su creciente relevancia. Para ello, se describirán los conceptos fundamentales de la IA, basándose en definiciones académicas rigurosas y proporcionando ejemplos prácticos que ilustren su aplicación en el mundo real. #cite("2", "3") Además, se presentará una línea de tiempo detallada que trace el desarrollo de la IA desde sus inicios hasta los avances más recientes. #cite("4", "5") Finalmente, se incluirá un ensayo crítico que analice el impacto actual y futuro de la IA en la economía, la sociedad, la política y la ética, destacando tanto su potencial revolucionario como los desafíos y riesgos que plantea. #cite("6", "7", "8", "9") La naturaleza interdisciplinaria de la IA, que se nutre de campos como la informática, la lingüística, la neurociencia y la filosofía, subraya su complejidad y la amplitud de sus implicaciones. #cite("10", "11", "12", "13") A través de este análisis, se busca proporcionar una comprensión profunda y matizada de la IA para un público informado, facilitando una apreciación de su papel crucial en la configuración de nuestro futuro. #cite("1", "14", "15")
+
+#web-image("assets/Timeline.png", width: 500pt, fallback: false)

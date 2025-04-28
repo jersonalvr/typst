@@ -1,4 +1,5 @@
 #import "../modules/references.typ": (add-reference, cite, print-references)
+#import "../modules/web_resources.typ": *
 #include "referencias.typ"
 
 == Conceptos Fundamentales de la Inteligencia Artificial
@@ -32,6 +33,8 @@ Las redes neuronales (RN), o neural networks (NN), representan un enfoque espec�
 ==== Ejemplos Prácticos
 
 Las redes neuronales se aplican en una variedad de tareas complejas. #cite("27") menciona el análisis de imágenes para identificar la retinopatía diabética como un ejemplo de su uso. El algoritmo de búsqueda de Google, según #cite("26"), es otro ejemplo conocido de una red neuronal en acción. En general, las RN son efectivas para tareas de reconocimiento de imágenes y voz, como se indica en #cite("24", "29"). También se utilizan en sistemas de recomendación de contenido, como los que se encuentran en plataformas de streaming, y en máquinas de imágenes médicas. #cite("24") Las redes neuronales profundas, con múltiples capas ocultas, son capaces de realizar tareas como resumir documentos o reconocer rostros con gran precisión. #cite("23") En la industria automotriz, las RN se utilizan en sistemas avanzados de asistencia al conductor (ADAS) para tareas como el reconocimiento de señales de tráfico y la detección de peatones. #cite("30")
+
+#web-image("https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Colored_neural_network.svg/800px-Colored_neural_network.svg.png", width: 300pt, caption: "Diagrama de una Red Neuronal", fallback: false)
 
 === Procesamiento del Lenguaje Natural (PLN) / Natural Language Processing (NLP)
 
