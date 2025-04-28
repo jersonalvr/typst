@@ -8,7 +8,7 @@
   title: "Evolución de la IA y su relevancia",
   idl: "1",
   curso: "Introducción a la Inteligencia Artificial",
-  estudiantes: ("Jerson Ruiz Alva",),
+  estudiantes: ("APAZA PEREZ, OSCAR GONZALO", "PONCE DE LEON TORRES, FABYOLA KORAYMA", "RUIZ ALVA, JERSON ENMANUEL"),
   profesores: ("Gino Joel Taipe Miranda",)
 )
 
