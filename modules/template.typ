@@ -99,11 +99,3 @@
 
   body
 }
-
-// Utility functions
-#let figure(img, caption) = {
-  figure(
-    image(img, width: 80%),
-    caption: caption
-  )
-}

@@ -5,7 +5,8 @@
       let volume = if "volume" in ref { [, vol. #ref.volume] } else { [] }
       let number = if "number" in ref { [(#ref.number)] } else { [] }
       let pages = if "pages" in ref { [, pp. #ref.pages] } else { [] }
-      return [#ref.author (#ref.year). #ref.title. #emph(ref.journal)#volume#number#pages]
+      let journal_info = if "journal" in ref { [#emph(ref.journal)] } else { [] }
+      return [#ref.author (#ref.year). #ref.title. #journal_info#volume#number#pages]
     }
   ),
   
@@ -46,7 +47,8 @@
     required: ("author", "title", "institution", "year"),
     format: (ref) => {
       let number = if "number" in ref { [. Report No. #ref.number] } else { [] }
-      return [#ref.author (#ref.year). #ref.title. #ref.institution#number]
+      let institution_field = if "institution" in ref { [#ref.institution] } else { [] }
+      return [#ref.author (#ref.year). #ref.title. #institution_field#number]
     }
   ),
   
@@ -55,29 +57,70 @@
     format: (ref) => {
       return [#ref.author (#ref.year). #ref.title. En: #ref.editor (Ed.), #emph(ref.book-title) (pp. #ref.pages). #ref.publisher]
     }
+  ),
+  
+  "news article": (
+    required: ("author", "title", "source", "year", "url"),
+    format: (ref) => {
+      let accessed = if "accessed" in ref { [ [Consultado: #ref.accessed]] } else { [] }
+      let source = if "source" in ref { [#emph(ref.source). ] } else { [] }
+      return [#ref.author (#ref.year). #ref.title. #source URL: #ref.url#accessed]
+    }
+  ),
+  
+  "blog post": (
+    required: ("author", "title", "year", "url"),
+    format: (ref) => {
+      let accessed = if "accessed" in ref { [ [Consultado: #ref.accessed]] } else { [] }
+      let blog = if "blog" in ref { [#emph(ref.blog). ] } else { [] }
+      return [#ref.author (#ref.year). #ref.title. #blog URL: #ref.url#accessed]
+    }
+  ),
+  
+  standard: (
+    required: ("author", "title", "number", "year"),
+    format: (ref) => {
+      let publisher = if "publisher" in ref { [. #ref.publisher] } else { [] }
+      let url = if "url" in ref { [URL: #ref.url] } else { [] }
+      let number_field = if "number" in ref { [(#ref.number)] } else { [] }
+      return [#ref.author (#ref.year). #emph(ref.title) #number_field#publisher. #url]
+    }
+  ),
+
+  initiative: (
+    required: ("author", "title", "institution", "year"),
+    format: (ref) => {
+      let institution_field = if "institution" in ref { [#ref.institution] } else { [] }
+      let url = if "url" in ref { [. URL: #ref.url] } else { [] }
+      return [#ref.author (#ref.year). #emph(ref.title). #institution_field#url]
+    }
   )
 )
 
 // Función para validar referencias
-#let validate-reference(ref) = {
-  if not "type" in ref {
-    panic("La referencia debe tener un tipo")
-  }
+// #let validate-reference(ref) = {
+//   if not "type" in ref {
+//     panic("La referencia debe tener un tipo")
+//   }
   
-  let required = reference-types.at(ref.type).required
-  for field in required {
-    if not field in ref {
-      panic("Campo requerido faltante: " + field)
-    }
-  }
-}
+//   if ref.type not in reference-types {
+//     panic("Tipo de referencia no soportado: " + ref.type)
+//   }
+  
+//   let required = reference-types.at(ref.type).required
+//   for field in required {
+//     if not field in ref {
+//       panic("Campo requerido faltante: " + field + " en referencia de tipo: " + ref.type)
+//     }
+//   }
+// }
 
 // Diccionario de referencias
 #let references = state("references", (:))
 
 // Función para agregar una referencia
 #let add-reference(key, ref) = {
-  validate-reference(ref)
+  //validate-reference(ref)
   references.update(refs => {
     refs.insert(key, ref)
     refs
