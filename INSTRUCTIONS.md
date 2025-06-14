@@ -7,12 +7,12 @@ Sigue las instruciones, no confundas el markdown que es unicamente para organiza
 El proyecto tiene la siguiente estructura de archivos:
 
 ```
-c:\Users\Jerson\Downloads\typst\
-├── CPP3_Ruiz_Alva.typ                 # Archivo principal Caso Practico Propuesto (NO EDITAR)
+c:\Users\Jerson\Documents\typst\
+├── CPP2_Ruiz_Alva.typ                 # Archivo principal Caso Practico Propuesto (NO EDITAR)
 ├── modules/
 │   ├── template.typ                   # Plantilla del proyecto (NO EDITAR)
 │   └── web_resources.typ              # Módulo para recursos web (NO EDITAR)
-├── CPP3_Ruiz_Alva/                   # CARPETA DE TRABAJO (Esta carpeta puede ser CPP1, CPP2, etc. y tener diferentes autores, se te debe indicar el nombre de la carpeta)
+├── CPP2_Ruiz_Alva/                   # CARPETA DE TRABAJO (Esta carpeta puede ser CPP1, CPP2, etc. y tener diferentes autores, se te debe indicar el nombre de la carpeta)
 │   ├── introduction.typ              # EDITABLE - Introducción del documento
 │   ├── part_a.typ                    # EDITABLE - Parte A del contenido
 │   ├── part_b.typ                    # EDITABLE - Parte B del contenido
@@ -23,20 +23,23 @@ c:\Users\Jerson\Downloads\typst\
 
 ## INSTRUCCIONES CRÍTICAS PARA EDICIÓN
 
-**SOLO EDITA LOS ARCHIVOS EN LA CARPETA `CPP3_Ruiz_Alva/`:**
+**SOLO EDITA LOS ARCHIVOS EN LA CARPETA `CPP2_Ruiz_Alva/`:**
+
 - `introduction.typ` - Para contenido de introducción
-- `part_a.typ` - Para la primera parte del documento  
+- `part_a.typ` - Para la primera parte del documento
 - `part_b.typ` - Para la segunda parte del documento
 - `conclusions.typ` - Para las conclusiones
 - `bibliografia.bib` - Para las referencias bibliográficas
 
 **NO EDITES NUNCA:**
-- `CPP3_Ruiz_Alva.typ` (archivo principal)
+
+- `CPP2_Ruiz_Alva.typ` (archivo principal)
 - Archivos en la carpeta `modules/`
 - `INSTRUCTIONS.md`
 
 **CONFIGURACIÓN YA INCLUIDA:**
-El archivo principal (`CPP3_Ruiz_Alva.typ`) ya incluye:
+El archivo principal (`CPP2_Ruiz_Alva.typ`) ya incluye:
+
 - Configuración de plantilla con `#import "modules/template.typ"`
 - Configuración del proyecto con títulos, autores, etc.
 - Inclusión automática de todos los archivos de contenido
@@ -51,7 +54,7 @@ Tu tarea es ayudarme a redactar contenido académico utilizando Typst. Sigue est
 * **OBLIGATORIO:** Crea capítulos y secciones usando `=` (nivel 1), `==` (nivel 2), `===` (nivel 3), etc. Ejemplo:
 
   ```typst
-  = Introducción <intro>
+  = #project-config.title <introduccion> // En el main el título principal del documento es extraído automáticamente, continuar con el contenido
   == Antecedentes <ante>
   === Marco teórico <marco>
   ```
@@ -59,7 +62,6 @@ Tu tarea es ayudarme a redactar contenido académico utilizando Typst. Sigue est
   - `supplement: [Sección]` renderiza "Sección" antes del número en nivel 1
   - Las etiquetas `<intro>`, `<ante>`, `<marco>` sirven para referencias cruzadas
   - **SIEMPRE** añade etiquetas descriptivas a todos los encabezados
-
 * **Referencias a secciones:** Usa `@etiqueta` en el texto para referenciar automáticamente:
 
   ```typst
@@ -77,13 +79,13 @@ Tu tarea es ayudarme a redactar contenido académico utilizando Typst. Sigue est
 
   ```typst
   La fórmula básica es $E = mc^2$.
-  
+
   $ E = mc^2 $ <energia>
-  
+
   En la @energia se muestra la relación masa-energía.
   ```
-
 * **IMPORTANTE:** En ecuaciones, usa `^` para exponentes (NO `**`):
+
   ```typst
   $ x^2 + y^2 = z^2 $  // CORRECTO
   $ x**2 + y**2 = z**2 $  // INCORRECTO
@@ -107,6 +109,7 @@ Tu tarea es ayudarme a redactar contenido académico utilizando Typst. Sigue est
 ```
 
 **Reglas estrictas para tablas:**
+
 - NO escribas "Tabla X:" en el caption
 - SIEMPRE usa etiquetas descriptivas como `<resultados>`, `<comparacion>`
 - Las columnas se definen con `(ancho1, ancho2, ancho3)` usando `fr` o medidas fijas
@@ -123,7 +126,8 @@ Para imágenes web, usa el módulo web_resources (numeración automática inclui
 
 #web-image(
   "https://ejemplo.com/imagen.png", 
-  width: 300pt, 
+  width: 300pt,
+  fallback: false,
   caption: "Descripción de la imagen"
 ) <etiqueta-imagen>
 ```
@@ -145,7 +149,7 @@ Para formas geométricas simples (requiere configuración manual de figuras):
 ### Listas
 
 - **Viñetas:** Usa `- ítem` o `* ítem`
-- **Numeradas:** Usa `+ ítem` 
+- **Numeradas:** Usa `+ ítem`
 - **Términos:** Usa `/ término: definición`
 
 ```typst
@@ -199,7 +203,8 @@ Para formas geométricas simples (requiere configuración manual de figuras):
 Los estudios recientes @bookclave confirman que @clavearticle, @clavemisc muestran resultados similares.
 ```
 
-**PROHIBIDO:** 
+**PROHIBIDO:**
+
 - NO uses superíndices: `^1`, `¹`, typst lo renderiza automáticamente como superíndice en formato IEEE
 - NO uses paréntesis simples: `(1)`
 
@@ -244,12 +249,14 @@ El comando `#set` configura elementos.
 **OBLIGATORIO:** Cuando necesites funcionalidad específica, busca primero en https://typst.app/universe
 
 **Criterios para seleccionar módulos:**
+
 1. **Popularidad:** Módulos con más descargas y estrellas
 2. **Mantenimiento:** Actualizaciones recientes (últimos 6 meses)
 3. **Documentación:** Ejemplos claros y documentación completa
 4. **Compatibilidad:** Compatible con la versión actual de Typst
 
 **Proceso de evaluación:**
+
 ```typst
 // 1. Importar y probar el módulo
 #import "@preview/nombre-modulo:version"
@@ -261,16 +268,19 @@ El comando `#set` configura elementos.
 **Módulos recomendados por categoría:**
 
 **Matemáticas y ciencias:**
+
 - `@preview/physica:0.9.5` - Notación física y matemática avanzada
 - `@preview/cetz:0.3.4` - Gráficos y diagramas científicos
 
 **Diagramas y visualizaciones:**
+
 - `@preview/fletcher:0.5.8` - Diagramas de flujo (ya incluido)
 - `@preview/pintorita:0.1.3` - Mapas mentales (ya incluido)
 - `@preview/chronos:0.2.1` - Diagramas de secuencia (ya incluido)
 - `@preview/cetz:0.3.4` - Diagramas técnicos avanzados
 
 **Formato y layout:**
+
 - `@preview/codly:1.3.0` - Bloques de código avanzados
 - `@preview/showybox:2.0.4` - Cajas destacadas y alertas
 - `@preview/tablex:0.0.9` - Tablas complejas
@@ -280,13 +290,14 @@ El comando `#set` configura elementos.
 Cuando necesites una funcionalidad específica:
 
 1. **Identifica la necesidad:**
+
    ```typst
    // Necesito: gráficos estadísticos para mostrar datos
    ```
-
 2. **Busca en Typst Universe:**
+
    - Visita https://typst.app/universe
-   - Busca términos relevantes 
+   - Busca términos relevantes
    - Evalúa opciones disponibles
    - Implementa el módulo seleccionado
 
@@ -332,6 +343,7 @@ mindmap
       +++ Sub-concepto C
 ```
 ]
+
 ```
 
 ### Chronos (diagramas de secuencia)

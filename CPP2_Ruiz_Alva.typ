@@ -3,7 +3,7 @@
 
 // Configuración del proyecto
 #let project-config = (
-  title: "",
+  title: "Modelos de Procesamiento de Datos y Predicción de Capturas Pesqueras",
   idl: "2",
   curso: "Proyecto Productivo IIIA",
   estudiantes: ("APAZA PEREZ, OSCAR GONZALO", "PONCE DE LEON TORRES, FABYOLA KORAYMA", "RUIZ ALVA, JERSON ENMANUEL",),
