@@ -1,57 +1,50 @@
-Dame la investigacion completa en un canvas, sigue las instruciones, no confundas el markdown que es unicamente para organizar el prompt con codigo para typst
+Sigue las instruciones, no confundas el markdown que es unicamente para organizar el prompt con codigo para typst
 
 # Guía para Redacción Académica con Typst
+
+## Estructura del Proyecto
+
+El proyecto tiene la siguiente estructura de archivos:
+
+```
+c:\Users\Jerson\Downloads\typst\
+├── CPP3_Ruiz_Alva.typ                 # Archivo principal Caso Practico Propuesto (NO EDITAR)
+├── modules/
+│   ├── template.typ                   # Plantilla del proyecto (NO EDITAR)
+│   └── web_resources.typ              # Módulo para recursos web (NO EDITAR)
+├── CPP3_Ruiz_Alva/                   # CARPETA DE TRABAJO (Esta carpeta puede ser CPP1, CPP2, etc. y tener diferentes autores, se te debe indicar el nombre de la carpeta)
+│   ├── introduction.typ              # EDITABLE - Introducción del documento
+│   ├── part_a.typ                    # EDITABLE - Parte A del contenido
+│   ├── part_b.typ                    # EDITABLE - Parte B del contenido
+│   ├── conclusions.typ               # EDITABLE - Conclusiones
+│   └── bibliografia.bib              # EDITABLE - Referencias bibliográficas
+└── INSTRUCTIONS.md                    # Este archivo de instrucciones
+```
+
+## INSTRUCCIONES CRÍTICAS PARA EDICIÓN
+
+**SOLO EDITA LOS ARCHIVOS EN LA CARPETA `CPP3_Ruiz_Alva/`:**
+- `introduction.typ` - Para contenido de introducción
+- `part_a.typ` - Para la primera parte del documento  
+- `part_b.typ` - Para la segunda parte del documento
+- `conclusions.typ` - Para las conclusiones
+- `bibliografia.bib` - Para las referencias bibliográficas
+
+**NO EDITES NUNCA:**
+- `CPP3_Ruiz_Alva.typ` (archivo principal)
+- Archivos en la carpeta `modules/`
+- `INSTRUCTIONS.md`
+
+**CONFIGURACIÓN YA INCLUIDA:**
+El archivo principal (`CPP3_Ruiz_Alva.typ`) ya incluye:
+- Configuración de plantilla con `#import "modules/template.typ"`
+- Configuración del proyecto con títulos, autores, etc.
+- Inclusión automática de todos los archivos de contenido
+- Configuración de bibliografía en estilo IEEE
 
 ## Instrucciones Generales
 
 Tu tarea es ayudarme a redactar contenido académico utilizando Typst. Sigue estas pautas EXACTAMENTE al trabajar con mis documentos:
-
-### Configuración de documento
-Este codigo establece la plantilla y las configuraciones básicas del documento, evita duplicar el codigo si ya esta incluido en el main.typ:
-
-```typst
-// main.typ
-#import "modules/template.typ": project
-
-#show: project.with(
-  title: "",
-  idl: "1",
-  curso: "",
-  estudiantes: ("",),
-  profesores: ("",)
-)
-
-// Configuración de numeración para tablas
-#show figure.where(kind: table): set figure(supplement: [Tabla])
-
-// Configuración de ecuaciones (si se necesitan)
-#set math.equation(numbering: "(1)", supplement: [Ec.])
-
-// Configuración de encabezados con numeración
-#set heading(numbering: "1.", supplement: [Sección])
-
-// Table of contents
-#outline(title: "Índice", indent: auto)
-#pagebreak()
-
-= Introducción <introduccion>
-#include "Informe/introduction.typ"
-
-#include "Informe/part_a.typ"
-
-#include "Informe/part_b.typ"
-
-= Conclusiones <conclusiones>
-#include "Informe/conclusions.typ"
-
-#bibliography(
-  "Informe/bibliografia.bib",
-  title: "Bibliografía",
-  full: false,                // solo incluir las entradas citadas
-  style: "ieee"
-)
-```
-
 
 ## 1. Secciones jerarquizadas
 
@@ -83,8 +76,6 @@ Este codigo establece la plantilla y las configuraciones básicas del documento,
 * **Ecuaciones en bloque:** Usa espacios antes y después de `$`:
 
   ```typst
-  #set math.equation(numbering: "(1)", supplement: [Ec.])
-  
   La fórmula básica es $E = mc^2$.
   
   $ E = mc^2 $ <energia>
@@ -103,8 +94,6 @@ Este codigo establece la plantilla y las configuraciones básicas del documento,
 **OBLIGATORIO:** Usa EXACTAMENTE este código para TODAS las tablas:
 
 ```typst
-#show figure.where(kind: table): set figure(supplement: [Tabla])
-
 #figure(
   text(size: 10pt)[
   #table(
@@ -214,12 +203,15 @@ Los estudios recientes @bookclave confirman que @clavearticle, @clavemisc muestr
 - NO uses superíndices: `^1`, `¹`, typst lo renderiza automáticamente como superíndice en formato IEEE
 - NO uses paréntesis simples: `(1)`
 
-### Bibliografía final
+### Bibliografía final (esto ya esta configurado en el CPP_Apellido_Estudiante.typ principal, por eso es importante generar el archivo `bibliografia.bib`)
 
 ```typst
+// main CPP_Apellido_Estudiante.typ
+= Bibliografía
 #bibliography(
-  "bibliografia.bib",
-  title: "Bibliografía", 
+  "CPP3_Ruiz_Alva/bibliografia.bib",
+  title: none, 
+  full: false, // solo incluir las entradas citadas
   style: "ieee"
 )
 ```
