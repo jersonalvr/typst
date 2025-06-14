@@ -1,0 +1,5 @@
+= Introducción <introduccion>
+
+La inteligencia artificial (IA) ha comenzado a transformar los sistemas judiciales en todo el mundo. Su capacidad para procesar grandes volúmenes de datos y realizar predicciones está influyendo en decisiones críticas dentro del ámbito legal. Sin embargo, esta transformación también plantea interrogantes éticos importantes. En este informe se analizan casos concretos de uso de la IA en sistemas judiciales contemporáneos, identificando sus beneficios y riesgos desde una perspectiva ética y tecnológica.
+
+Actualmente, muchos países enfrentan sistemas judiciales sobrecargados, lentos e ineficientes. La IA surge como una solución prometedora para automatizar tareas repetitivas, analizar grandes cantidades de jurisprudencia, predecir resultados judiciales o identificar patrones de reincidencia. No obstante, los peligros de aplicar tecnologías opacas y potencialmente sesgadas en decisiones que afectan derechos fundamentales como la libertad personal son profundos. Este informe parte de la necesidad de evaluar críticamente estos avances.

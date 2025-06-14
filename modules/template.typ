@@ -31,7 +31,7 @@
     ],
     footer: grid(
       columns: (1fr, auto),
-      align(right)[#text(font: "Century Gothic", size: 9pt, weight: "bold")[icontinental]#text(font: "Century Gothic", size: 9pt)[.edu.pe]]
+      align(right)[#text(font: "Century Gothic", size: 9pt, weight: "bold")[icontinental]#link("https://icontinental.edu.pe")[#text(font: "Century Gothic", size: 9pt)[.edu.pe]]]
     )
   )[
     #align(center)[
@@ -51,25 +51,25 @@
       #line(length: 11.35cm, stroke: rgb("#a6a6a6"))
       #v(2cm)
       
-      #text(size: 14pt, weight: "bold")[Elaborado por:]
+      #text(size: 16pt, weight: "bold")[Elaborado por:]
       #v(0.3cm)
-      #text(size: 12pt)[
+      #text(size: 14pt)[
         #for student in estudiantes {
           [#student \ ]
         }
       ]
       
       #v(1.5cm)
-      #text(size: 14pt, weight: "bold")[Solicitado por:]
+      #text(size: 16pt, weight: "bold")[Solicitado por:]
       #v(0.3cm)
-      #text(size: 12pt)[
+      #text(size: 14pt)[
         #for prof in profesores {
           [#prof \ ]
         }
       ]
       
       #v(2cm)
-      #text(size: 12pt)[Huancayo, #datetime.today().year()]
+      #text(size: 14pt)[Huancayo, #datetime.today().year()]
     ]
   ]
   
@@ -86,12 +86,12 @@
         grid(
           columns: (1fr, auto),
           align(left)[#text(font: "Century Gothic", size: 9pt)[Oficina de Gestión de la Calidad]],
-          align(right)[#text(font: "Century Gothic", size: 9pt, weight: "bold")[icontinental]#text(font: "Century Gothic", size: 9pt)[.edu.pe | #page-number]]
+          align(right)[#text(font: "Century Gothic", size: 9pt, weight: "bold")[icontinental]#link("https://icontinental.edu.pe")[#text(font: "Century Gothic", size: 9pt)[.edu.pe]] | #page-number]
         )
       } else {
         grid(
           columns: (1fr, auto),
-          align(right)[#text(font: "Century Gothic", size: 9pt, weight: "bold")[icontinental]#text(font: "Century Gothic", size: 9pt)[.edu.pe]]
+          align(right)[#text(font: "Century Gothic", size: 9pt, weight: "bold")[icontinental]#link("https://icontinental.edu.pe")[#text(font: "Century Gothic", size: 9pt)[.edu.pe]]]
         )
       }
     }

@@ -1,254 +1,326 @@
+Dame la investigacion completa en un canvas, sigue las instruciones, no confundas el markdown que es unicamente para organizar el prompt con codigo para typst
+
 # Guía para Redacción Académica con Typst
 
 ## Instrucciones Generales
 
-Tu tarea es ayudarme a redactar contenido académico utilizando Typst, sigue estas pautas al trabajar con mis documentos:
+Tu tarea es ayudarme a redactar contenido académico utilizando Typst. Sigue estas pautas EXACTAMENTE al trabajar con mis documentos:
 
-## Secciones jerarquizadas
+### Configuración de documento
+Este codigo establece la plantilla y las configuraciones básicas del documento, evita duplicar el codigo si ya esta incluido en el main.typ:
 
-* Crea capítulos y secciones usando `=` (nivel 1) y `==` (nivel 2), etc. Por ejemplo:
+```typst
+// main.typ
+#import "modules/template.typ": project
 
-  ```typst
-  #set heading(numbering: "1.", supplement: [Capítulo])  // Enumera “Capítulo 1. …”
-  = Introducción <intro>
-  == Antecedentes <ante>
-  ```
+#show: project.with(
+  title: "",
+  idl: "1",
+  curso: "",
+  estudiantes: ("",),
+  profesores: ("",)
+)
 
-  Aquí, `Capítulo` es un texto previo a cada número de nivel 1, y las etiquetas `<intro>` y `<ante>` sirven para referencias cruzadas. Luego puedes referirte con `@intro` o `@ante` en el texto (Typst convertirá a “Sección 1.1” por ejemplo).
-* Para referenciar encabezados, añade `#ref` o simplemente usa `@etiqueta` en el texto. Por ejemplo:
+// Configuración de numeración para tablas
+#show figure.where(kind: table): set figure(supplement: [Tabla])
 
-  ```typst
-  Como se explica en @intro, …
-  ```
+// Configuración de ecuaciones (si se necesitan)
+#set math.equation(numbering: "(1)", supplement: [Ec.])
 
-## Contenido científico
+// Configuración de encabezados con numeración
+#set heading(numbering: "1.", supplement: [Sección])
 
-* **Ecuaciones:** Usa `$ ... $` para ecuaciones en línea y equítalinear ecuaciones en bloque con un espacio en blanco antes y después del delimitador, por ejemplo:
+// Table of contents
+#outline(title: "Índice", indent: auto)
+#pagebreak()
 
-  ```typst
-  La fórmula de Pitágoras es $a^2 + b^2 = c^2$.  
+= Introducción <introduccion>
+#include "Informe/introduction.typ"
 
-  ## Ejemplo de ecuación en bloque
-  $ E = mc^2 $ <eq1>
-  ```
+#include "Informe/part_a.typ"
 
-  Activa la numeración de ecuaciones con algo como `#set math.equation(numbering: "(1)", supplement: [Ec.])`. Por ejemplo:
+#include "Informe/part_b.typ"
 
-  ```typst
-  #set math.equation(numbering: "(1)", supplement: [Ec.])
-  $ E = mc^2 $ <ener>
-  En la @ener, mostramos la famosa ecuación de Einstein.
-  ```
+= Conclusiones <conclusiones>
+#include "Informe/conclusions.typ"
 
-  Aquí `@ener` producirá “Ec. (1)”.
-
-* **Tablas:** Crea tablas con `#table(...)`. Define columnas, filas y encabezados. Por ejemplo:
-
-  ```typst
-  #show figure.where(kind: table): set figure(supplement: [Tabla])
-
-  #figure(
-    text(size: 9pt)[
-      #table(
-        columns: (2fr, 1fr, 1fr),
-        table.header([*Nombre*], [*Edad*], [*Puntaje*]),
-        [Alice], [23], [87],
-        [Bob], [19], [92],
-      )
-    ],
-    caption: [Datos de ejemplo de estudiantes.]
-  ) <tbl>
-  ```
-
-  Aquí la tabla queda dentro de `#figure` para añadirle una leyenda, y la referenciamos con `@tbl`.
-  
-  ```typst
-  Como se muestra en @tbl ...,
-  ```
-* **Diagramas:** Puedes dibujar figuras simples con funciones de visualización integradas, como `#circle()`, `#rectangle()`, `#polygon(...)`, `#line()`, etc. Por ejemplo:
-
-  ```typst
-  #figure(
-    #circle(radius: 1cm, fill: lightblue),
-    caption: [Diagrama sencillo de un círculo.]
-  )
-  ```
-
-  O combinar múltiples formas:
-
-  ```typst
-  #figure(
-    #polygon(
-      fill: green,
-      (0pt, 0pt), (2cm, 0pt), (1cm, 1.5cm)
-    ),
-    caption: [Triángulo verde con vértices dados.]
-  )
-  ```
-* **Listas:** Para listas de viñetas, usa `- ítem` o `* ítem`; para listas numeradas automáticamente usa `+ ítem` o números (`1. ítem`). y una barra diagonal (/) seguida del término y dos puntos para listas de términos. https://typst.app/docs/reference/model/terms/ Ejemplo:
-
-  ```typst
-  - Punto uno
-  - Punto dos
-  + Elemento A
-  + Elemento B
-  ```
-
-## 4. Citas y bibliografía
-
-* Genera bibliografia.bib e importa el archivo BibTeX:
-
-  ```typst
-  #bibliography("bibliografia.bib", style: "ieee")
-  ```
-* Cita en el texto con `@clave` (clave del artículo en el .bib). Por ejemplo:
-
-  ```typst
-  Estudios recientes [@Autor2023] demuestran que...
-  ```
-
-  Alternativamente, `#cite(<Autor2023>)` produce una cita similar. El bloque de bibliografía se generará al final con solo las referencias usadas.
-
-* Asegúrate de colocar `#bibliography(...)` en la sección final del documento
-
-  ```typst
-  #bibliography(
-  ("ref.bib"),
+#bibliography(
+  "Informe/bibliografia.bib",
   title: "Bibliografía",
   full: false,                // solo incluir las entradas citadas
   style: "ieee"
-  )
-  ```
-
-## Tipografía y estilos
-
-El formato básico del texto en Typst se realiza mediante marcado simple: los asteriscos (*) para texto en negrita y los guiones bajos (_) para texto en cursiva. Es importante notar que la sintaxis Markdown ** para negrita debe convertirse a * en Typst, excepto cuando aparece en ecuaciones, donde ** indica una potencia y debe transformarse a ^. Los párrafos se separan mediante líneas en blanco.
-
-* **Color de texto:** Cambia el color de la fuente con `fill` en `text`, o usando funciones de color. Por ejemplo:
-
-  ```typst
-  #set text(fill: rgb(0, 0, 0))  // texto negro
-  Este texto será negro.
-  ```
-* **Énfasis:** Usa `_palabra_` para cursiva y `*palabra*` para negrita en sintaxis Typst. Por ejemplo:
-
-  ```typst
-  Este es un texto _importante_ y este otro es **destacado**.
-  ```
-* **Subrayado y resaltado:** Puedes subrayar con `#underline[texto]` y resaltar con `#highlight[texto]`. Ejemplo:
-
-  ```typst
-  Este es un #highlight[texto resaltado] en amarillo.
-  ```
-
-  También puedes cambiar el color de resaltado: `#highlight(fill: red)[texto]`.
-* **Listas especiales:** Crea listas de términos y definiciones con formato de “término: definición”. Ejemplo:
-
-  ```typst
-  ángulo: Medida de inclinación.
-  radio: Distancia desde el centro.
-  ```
-* **Notas al pie:** Añade notas al pie con `#footnote[...]`. Ejemplo:
-
-  ```typst
-  Texto con nota al pie #footnote[Explicación adicional] al final.
-  ```
-
-  Esto inserta un número superíndice y coloca el texto en la nota inferior.
-* **Justificación y espaciado:** Justifica párrafos con:
-
-  ```typst
-  #set par(justify: true)
-  ```
-
-  Ajusta el espaciado entre párrafos, sangrías y demás con reglas de estilo adicionales según necesites.
-* **Reglas y estructuras globales:** Usa `#set heading(numbering: ...)`, `#set list(marker: [...])`, etc., para cambiar numeración o estilo predeterminado. Ejemplo:
-
-  ```typst
-  #set heading(numbering: "I.")
-  #set list(marker: [--])
-  ```
-
-  Esto numeraría capítulos con romanos y usaría guiones largos para viñetas.
-
-## Extras y personalización
-
-* **Código fuente / pseudocódigo:** Inserta bloques de código usando triple backticks con opción de lenguaje para sintaxis:
-
-  ````typst
-  ```python
-  def cuadrado(x):
-      return x*x
-  ````
-
-  ```
-  Para texto en línea con estilo de código, usa un solo backtick o `#raw`. Además, puedes aplicar estilos a bloques de código con reglas `#show raw.where(block: true): ...`.
-  ```
-* **Personalización de estilo:** Aplica `#set` y `#show` para definir estilos globales o específicos. Ejemplo:
-
-  ```typst
-  #set page(fill: rgb(0.95,0.95,0.95))  // color de fondo de página
-  #show heading[level:1]: set text(weight: 700)  // títulos nivel 1 en negrita
-  ```
-
-## Módulo de Recursos Web
-
-Para incluir imágenes y recursos basados en web utiliza mi módulo personalizado:
-
-```typst
-#import "../modules/web_resources.typ": web-image
-
-#web-image("https://ejemplo.com/imagen.png", width: 300pt, caption: "Pie de imagen")
-```
-
-Para referenciar una imagen
-
-```typst
-#import "../modules/web_resources.typ": web-image
-
-@glacial Ilustración de un glacial:
-
-#web-image("https://ejemplo.com/glacial.png", width: 300pt, caption: "Ilustración de un glacial") <glacial>
-```
-
-En el texto, @glacial se sustituirá por “Figura 1” (o el número correspondiente). Así logramos título, figura y referencia cruzada.
-
-## Módulo de Diagramas Fletcher
-
-Para diagramas de flujo y gráficos de procesos:
-
-```typst
-#import "@preview/fletcher:0.5.6" as fletcher: diagram, node, edge
-#import fletcher.shapes: diamond
-
-// Creando tipos de nodos
-#let nodo-rect(pos, contenido) = {
-  node(pos, contenido, corner-radius: 3pt, width: auto, height: auto, inset: 5pt)
-}
-
-#let nodo-diamond(pos, contenido) = {
-  node(pos, contenido, shape: diamond, width: auto, height: auto, inset: 6pt)
-}
-
-// Creando el diagrama
-#diagram(
-  node-stroke: 0.8pt,
-  spacing: 12mm,
-  
-  nodo-rect((0, 0), [Inicio]),
-  edge((0, 0), (0, 1), "->"),
-  // Nodos y aristas adicionales
 )
 ```
 
-## Módulo Pintorita para Mapas Mentales
 
-Para crear mapas mentales y diagramas conceptuales:
+## 1. Secciones jerarquizadas
+
+* **OBLIGATORIO:** Crea capítulos y secciones usando `=` (nivel 1), `==` (nivel 2), `===` (nivel 3), etc. Ejemplo:
+
+  ```typst
+  = Introducción <intro>
+  == Antecedentes <ante>
+  === Marco teórico <marco>
+  ```
+
+  - `supplement: [Sección]` renderiza "Sección" antes del número en nivel 1
+  - Las etiquetas `<intro>`, `<ante>`, `<marco>` sirven para referencias cruzadas
+  - **SIEMPRE** añade etiquetas descriptivas a todos los encabezados
+
+* **Referencias a secciones:** Usa `@etiqueta` en el texto para referenciar automáticamente:
+
+  ```typst
+  Como se explica en @intro, los antecedentes de @ante muestran...
+  ```
+
+  Esto produce automáticamente "Capítulo 1", "Sección 1.1", etc.
+
+## 2. Contenido científico
+
+### Ecuaciones
+
+* **Ecuaciones en línea:** Usa `$ecuación$` (sin espacios alrededor)
+* **Ecuaciones en bloque:** Usa espacios antes y después de `$`:
+
+  ```typst
+  #set math.equation(numbering: "(1)", supplement: [Ec.])
+  
+  La fórmula básica es $E = mc^2$.
+  
+  $ E = mc^2 $ <energia>
+  
+  En la @energia se muestra la relación masa-energía.
+  ```
+
+* **IMPORTANTE:** En ecuaciones, usa `^` para exponentes (NO `**`):
+  ```typst
+  $ x^2 + y^2 = z^2 $  // CORRECTO
+  $ x**2 + y**2 = z**2 $  // INCORRECTO
+  ```
+
+### Tablas
+
+**OBLIGATORIO:** Usa EXACTAMENTE este código para TODAS las tablas:
 
 ```typst
-#import "@preview/pintorita:0.1.3"
-#show raw.where(lang: "pintora"): it => pintorita.render(it.text, style: "default", font: "Century Gothic")
+#show figure.where(kind: table): set figure(supplement: [Tabla])
 
+#figure(
+  text(size: 10pt)[
+  #table(
+    columns: (2fr, 1fr, 1fr),  // Ajusta según necesidad
+    table.header([*Columna 1*], [*Columna 2*], [*Columna 3*]),
+    [Dato 1], [Dato 2], [Dato 3],
+    [Dato 4], [Dato 5], [Dato 6],
+  )],
+  caption: [Descripción de la tabla sin incluir "Tabla" ni número.]
+) <etiqueta-tabla>
+```
+
+**Reglas estrictas para tablas:**
+- NO escribas "Tabla X:" en el caption
+- SIEMPRE usa etiquetas descriptivas como `<resultados>`, `<comparacion>`
+- Las columnas se definen con `(ancho1, ancho2, ancho3)` usando `fr` o medidas fijas
+- Para referenciar: `Como muestra @resultados...`
+
+### Figuras e imágenes
+
+**IMPORTANTE:** El módulo web_resources YA incluye configuración automática de numeración de figuras.
+
+Para imágenes web, usa el módulo web_resources (numeración automática incluida):
+
+```typst
+#import "../modules/web_resources.typ": web-image
+
+#web-image(
+  "https://ejemplo.com/imagen.png", 
+  width: 300pt, 
+  caption: "Descripción de la imagen"
+) <etiqueta-imagen>
+```
+
+**NOTA:** NO necesitas añadir `#show figure.where(kind: image): set figure(supplement: [Figura])` si usas web_resources.
+
+Para formas geométricas simples (requiere configuración manual de figuras):
+
+```typst
+// Solo añadir si NO usas web_resources para imágenes
+#show figure.where(kind: image): set figure(supplement: [Figura])
+
+#figure(
+  circle(radius: 1cm, fill: blue),
+  caption: [Círculo de ejemplo.]
+) <circulo>
+```
+
+### Listas
+
+- **Viñetas:** Usa `- ítem` o `* ítem`
+- **Numeradas:** Usa `+ ítem` 
+- **Términos:** Usa `/ término: definición`
+
+```typst
+- Primera viñeta
+- Segunda viñeta
+
++ Primer elemento numerado
++ Segundo elemento numerado
+
+/ Término: Definición del término
+/ Otro término: Otra definición
+```
+
+## 3. Citas y bibliografía
+
+### OBLIGATORIO: Archivo bibliografia.bib
+
+**SIEMPRE** crea un archivo `bibliografia.bib` con claves numéricas:
+
+```bib
+@article{clavearticle,
+  title = {Título del artículo},
+  author = {Apellido, Nombre},
+  journal = {Revista},
+  year = {2023},
+  volume = {10},
+  pages = {1-15}
+}
+
+@book{bookclave,
+  title = {Título del libro},
+  author = {Apellido, Nombre},
+  publisher = {Editorial},
+  year = {2022}
+}
+
+@misc{clavemisc,
+  title = {Recurso web},
+  author = {Autor},
+  url = {https://ejemplo.com},
+  year = {2024},
+  note = {Accedido: 2024-01-01}
+}
+```
+
+### Citas en el texto
+
+**OBLIGATORIO:** Usa formato `@clavedescriptiva` SIEMPRE:
+
+```typst
+Los estudios recientes @bookclave confirman que @clavearticle, @clavemisc muestran resultados similares.
+```
+
+**PROHIBIDO:** 
+- NO uses superíndices: `^1`, `¹`, typst lo renderiza automáticamente como superíndice en formato IEEE
+- NO uses paréntesis simples: `(1)`
+
+### Bibliografía final
+
+```typst
+#bibliography(
+  "bibliografia.bib",
+  title: "Bibliografía", 
+  style: "ieee"
+)
+```
+
+## 4. Tipografía y formato
+
+### Formato básico de texto
+
+- **Negrita:** `*texto*` (un asterisco, NO dos)
+- **Cursiva:** `_texto_` (guiones bajos)
+- **Código inline:** `` `código` ``
+
+```typst
+Este texto es *importante* y este es _enfatizado_.
+El comando `#set` configura elementos.
+```
+
+### Colores y estilos especiales
+
+```typst
+#highlight[texto resaltado]
+#highlight(fill: red)[texto resaltado en rojo]
+#underline[texto subrayado]
+```
+
+## 5. Módulos especializados
+
+### Búsqueda de módulos en Typst Universe
+
+**OBLIGATORIO:** Cuando necesites funcionalidad específica, busca primero en https://typst.app/universe
+
+**Criterios para seleccionar módulos:**
+1. **Popularidad:** Módulos con más descargas y estrellas
+2. **Mantenimiento:** Actualizaciones recientes (últimos 6 meses)
+3. **Documentación:** Ejemplos claros y documentación completa
+4. **Compatibilidad:** Compatible con la versión actual de Typst
+
+**Proceso de evaluación:**
+```typst
+// 1. Importar y probar el módulo
+#import "@preview/nombre-modulo:version"
+
+// 2. Verificar funcionalidad básica con ejemplo mínimo
+// 3. Adaptar a necesidades específicas del documento
+```
+
+**Módulos recomendados por categoría:**
+
+**Matemáticas y ciencias:**
+- `@preview/physica:0.9.5` - Notación física y matemática avanzada
+- `@preview/cetz:0.3.4` - Gráficos y diagramas científicos
+
+**Diagramas y visualizaciones:**
+- `@preview/fletcher:0.5.8` - Diagramas de flujo (ya incluido)
+- `@preview/pintorita:0.1.3` - Mapas mentales (ya incluido)
+- `@preview/chronos:0.2.1` - Diagramas de secuencia (ya incluido)
+- `@preview/cetz:0.3.4` - Diagramas técnicos avanzados
+
+**Formato y layout:**
+- `@preview/codly:1.3.0` - Bloques de código avanzados
+- `@preview/showybox:2.0.4` - Cajas destacadas y alertas
+- `@preview/tablex:0.0.9` - Tablas complejas
+
+### Ejemplo de búsqueda e implementación
+
+Cuando necesites una funcionalidad específica:
+
+1. **Identifica la necesidad:**
+   ```typst
+   // Necesito: gráficos estadísticos para mostrar datos
+   ```
+
+2. **Busca en Typst Universe:**
+   - Visita https://typst.app/universe
+   - Busca términos relevantes 
+   - Evalúa opciones disponibles
+   - Implementa el módulo seleccionado
+
+### Diagramas Fletcher (diagramas de flujo)
+
+```typst
+#import "@preview/fletcher:0.5.8" as fletcher: diagram, node, edge
+
+#diagram(
+  node-stroke: 1pt,
+  spacing: 15mm,
+  
+  node((0, 0), [Inicio], corner-radius: 3pt),
+  edge((0, 0), (0, 1), "->"),
+  node((0, 1), [Proceso], corner-radius: 3pt),
+  edge((0, 1), (0, 2), "->"),
+  node((0, 2), [Fin], corner-radius: 3pt),
+)
+```
+
+### Pintorita (mapas mentales)
+
+```typst
+#import "@preview/pintorita:0.1.4"
+#align(center)[
+#show raw.where(lang: "pintora"): it => pintorita.render(it.text, style: "default", font: "Century Gothic")
 ```pintora
 mindmap
   @param layoutDirection LR
@@ -260,32 +332,120 @@ mindmap
     nodeBgColor     #3f5688
     textColor       #fff
   }
-  + Concepto Principal
+  + Concepto Central
     ++ Rama 1
-      +++ Sub-rama 1
-      +++ Sub-rama 2
+      +++ Sub-concepto A
+      +++ Sub-concepto B
     ++ Rama 2
-      +++ Sub-rama 3
+      +++ Sub-concepto C
+```
+]
 ```
 
-## Módulo Chronos para Diagramas de Secuencia
-
-Para crear diagramas de secuencia que muestren flujos de procesos:
+### Chronos (diagramas de secuencia)
 
 ```typst
 #import "@preview/chronos:0.2.1"
 
 #chronos.diagram({
   import chronos: *
-  _par("A", display-name: "Participante A")
-  _par("B", display-name: "Participante B")
+  _par("A", display-name: "Actor A")
+  _par("B", display-name: "Actor B")
   
-  _seq("A", "B", comment: "Mensaje", enable-dst: true)
-  // Elementos de secuencia adicionales
+  _seq("A", "B", comment: "Mensaje")
+  _seq("B", "A", comment: "Respuesta")
 })
 ```
 
-Utiliza mas módulos en https://typst.app/universe según sea necesario
+### Módulos adicionales útiles
 
-no text within stars
-Hint: using multiple consecutive stars (e.g. **) has no additional effect in typst
+#### CeTZ para diagramas técnicos
+
+https://typst.app/universe/package/cetz
+
+#### Showybox para cajas destacadas
+
+```typst
+#import "@preview/showybox:2.0.4": showybox
+
+// First showybox
+#showybox(
+  frame: (
+    border-color: red.darken(50%),
+    title-color: red.lighten(60%),
+    body-color: red.lighten(80%)
+  ),
+  title-style: (
+    color: black,
+    weight: "regular",
+    align: center
+  ),
+  shadow: (
+    offset: 3pt,
+  ),
+  title: "Red-ish showybox with separated sections!",
+  lorem(20),
+  lorem(12)
+)
+
+// Second showybox
+#showybox(
+  frame: (
+    dash: "dashed",
+    border-color: red.darken(40%)
+  ),
+  body-style: (
+    align: center
+  ),
+  sep: (
+    dash: "dashed"
+  ),
+  shadow: (
+	  offset: (x: 2pt, y: 3pt),
+    color: yellow.lighten(70%)
+  ),
+  [This is an important message!],
+  [Be careful outside. There are dangerous bananas!]
+)
+```
+
+#### Physica para notación científica
+
+```typst
+#import "@preview/physica:0.9.5": *
+
+$ 
+vec(F) = m vec(a) 
+$
+
+$ 
+pdv(f, x, y) = pdv(, x, y) f 
+$
+```
+
+**Instrucciones para la IA:**
+
+1. **SIEMPRE** verifica la versión más reciente del módulo en Typst Universe
+2. **EVALÚA** si el módulo es necesario antes de sugerirlo
+3. **PROPORCIONA** ejemplos completos de implementación
+4. **INVESTIGA ** enlaces a documentación cuando sea necesario
+5. **CONSIDERA** alternativas nativas de Typst antes de módulos externos
+
+## REGLAS CRÍTICAS PARA IA
+
+1. **NUNCA** uses `**` para negrita en texto normal (solo `*`)
+2. **NUNCA** uses `**` en ecuaciones para exponentes (usa `^`)
+3. **SIEMPRE** usa `[@número]` para citas (nunca superíndices)
+4. **SIEMPRE** crea archivo `bibliografia.bib` con claves numéricas
+5. **SIEMPRE** usa etiquetas descriptivas en figuras, tablas y secciones
+6. **NUNCA** incluyas "Tabla X:" o "Figura X:" en captions
+7. **SIEMPRE** usa el código exacto proporcionado para tablas
+8. **SIEMPRE** separa ecuaciones en bloque con líneas en blanco
+9. **BUSCA** módulos apropiados en Typst Universe cuando la funcionalidad nativa sea insuficiente
+10. **VERIFICA** compatibilidad y mantenimiento de módulos antes de recomendarlos
+11. **PROPORCIONA** implementaciones completas con ejemplos funcionales
+12. **EVALÚA** necesidad real antes de añadir dependencias externas
+13. **EVITA** configuraciones duplicadas de numeración si los módulos ya las incluyen
+14. **VERIFICA** qué configuraciones proporciona cada módulo antes de añadir configuraciones manuales
+
+Estas reglas son obligatorias y no opcionales.
