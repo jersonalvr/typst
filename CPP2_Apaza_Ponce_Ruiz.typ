@@ -15,17 +15,17 @@
 // Título principal del documento extraído automáticamente
 = #project-config.title <introduccion>
 
-#include "CPP2_Ruiz_Alva/introduction.typ"
+#include "CPP2_Apaza_Ponce_Ruiz/introduction.typ"
 
-#include "CPP2_Ruiz_Alva/part_a.typ"
+#include "CPP2_Apaza_Ponce_Ruiz/part_a.typ"
 
-#include "CPP2_Ruiz_Alva/part_b.typ"
+#include "CPP2_Apaza_Ponce_Ruiz/part_b.typ"
 
-#include "CPP2_Ruiz_Alva/conclusions.typ"
+#include "CPP2_Apaza_Ponce_Ruiz/conclusions.typ"
 
 = Bibliografía
 #bibliography(
-  "CPP2_Ruiz_Alva/bibliografia.bib",
+  "CPP2_Apaza_Ponce_Ruiz/bibliografia.bib",
   title: none, 
   full: false, // solo incluir las entradas citadas
   style: "ieee"
