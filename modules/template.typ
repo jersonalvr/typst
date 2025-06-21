@@ -25,7 +25,7 @@
   set math.equation(numbering: "(1)")
 
   // Configuración de encabezados con numeración
-  set heading(numbering: "1.")
+  set heading(numbering: "1.", supplement: [Sección])
 
   // Configuración de numeración para tablas
   show figure.where(kind: table): set figure(supplement: [Tabla])
@@ -112,14 +112,14 @@
 
   // Table of contents
   outline(title: "Índice", indent: auto)
-  outline(
-    title: "Lista de Figuras",
-    target: figure.where(kind: image)
-  )
-  outline(
-    title: "Lista de Tablas",
-    target: figure.where(kind: table)
-  )
+  //outline(
+    //title: "Lista de Figuras",
+    //target: figure.where(kind: image)
+  //)
+  //outline(
+    //title: "Lista de Tablas",
+    //target: figure.where(kind: table)
+  //)
 
   pagebreak()
 
