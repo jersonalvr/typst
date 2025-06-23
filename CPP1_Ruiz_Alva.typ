@@ -3,11 +3,11 @@
 
 // Configuración del proyecto
 #let project-config = (
-  title: "LA TESIS IMPLÍCITA Y EXPLÍCITA",
+  title: "Desarrollo de 20 soluciones con IA",
   idl: "1",
-  curso: "Comunicación y Argumentación",
+  curso: "Desarrollo de soluciones con IA",
   estudiantes: ("RUIZ ALVA, JERSON ENMANUEL",),
-  profesores: ("ROCIO JESSICA TICLLACURI RAMOS",)
+  profesores: ("Diego Mariany Llaro Cruz",)
 )
 
 #show: project.with(..project-config)

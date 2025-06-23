@@ -12,7 +12,7 @@ c:\Users\Jerson\Documents\typst\
 ├── modules/
 │   ├── template.typ                   # Plantilla del proyecto (NO EDITAR)
 │   └── web_resources.typ              # Módulo para recursos web (NO EDITAR)
-├── CPP1_Ruiz_Alva/                   # CARPETA DE TRABAJO (Esta carpeta puede ser CPP1, CPP2, etc. y tener diferentes autores, se te debe indicar el nombre de la carpeta)
+├── CPP1_Ruiz_Alva/                   # CARPETA DE TRABAJO
 │   ├── introduction.typ              # EDITABLE - Introducción del documento
 │   ├── part_a.typ                    # EDITABLE - Parte A del contenido
 │   ├── part_b.typ                    # EDITABLE - Parte B del contenido
@@ -33,12 +33,12 @@ c:\Users\Jerson\Documents\typst\
 
 **NO EDITES NUNCA:**
 
-- `CPP2_Ruiz_Alva.typ` (archivo principal)
+- `CPP1_Ruiz_Alva.typ` (archivo principal)
 - Archivos en la carpeta `modules/`
 - `INSTRUCTIONS.md`
 
 **CONFIGURACIÓN YA INCLUIDA:**
-El archivo principal (`CPP2_Ruiz_Alva.typ`) ya incluye:
+El archivo principal (`CPP1_Ruiz_Alva.typ`) ya incluye:
 
 - Configuración de plantilla con `#import "modules/template.typ"`
 - Configuración del proyecto con títulos, autores, etc.
@@ -228,6 +228,7 @@ Los estudios recientes @bookclave confirman que @clavearticle, @clavemisc muestr
 - **Negrita:** `*texto*` (un asterisco, NO dos)
 - **Cursiva:** `_texto_` (guiones bajos)
 - **Código inline:** `` `código` ``
+- **Representar USD SYMBOL:** Usa `\$` para el símbolo de dólar
 
 ```typst
 Este texto es *importante* y este es _enfatizado_.

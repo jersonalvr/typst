@@ -1,29 +1,202 @@
-== Desarrollo de la Tesis Explícita <parte-a>
+= Metodologías y Principios Éticos en el Desarrollo de IA <parte-a>
 
-=== Tema Seleccionado <tema>
+== Metodologías de Desarrollo de Soluciones de IA <metodologias>
 
-*Inteligencia Artificial y Ciencia de Datos en la Transformación Digital*
+=== Framework CRISP-DM Adaptado para IA <crisp-dm>
 
-=== Tesis Explícita <tesis-explicita>
+El framework CRISP-DM (Cross-Industry Standard Process for Data Mining) adaptado para IA proporciona una metodología estructurada para el desarrollo de soluciones inteligentes @digitaltransformation2024.
 
-*"La implementación de inteligencia artificial y ciencia de datos es fundamental para el éxito de las organizaciones en la era digital, ya que proporciona ventajas competitivas significativas, optimiza procesos operativos y mejora la toma de decisiones estratégicas."*
+#figure(
+  text(size: 10pt)[
+  #table(
+    columns: (1fr, 2fr, 2fr),
+    table.header([*Fase*], [*Actividades Principales*], [*Consideraciones Éticas*]),
+    [Comprensión del Negocio], [Definición de objetivos, identificación de stakeholders], [Evaluación de impacto social, análisis de equidad],
+    [Comprensión de Datos], [Exploración, calidad, privacidad], [Consentimiento, anonimización, sesgos en datos],
+    [Preparación de Datos], [Limpieza, transformación, selección], [Prevención de sesgos, representatividad],
+    [Modelado], [Selección de algoritmos, entrenamiento], [Transparencia, explicabilidad, fairness],
+    [Evaluación], [Validación, métricas de rendimiento], [Métricas de equidad, pruebas de sesgo],
+    [Despliegue], [Implementación, monitoreo], [Supervisión continua, feedback loops],
+  )],
+  caption: [Fases del framework CRISP-DM adaptado con consideraciones éticas.]
+) <crisp-tabla>
 
-=== Argumentos que Sustentan la Tesis Explícita <argumentos-explicita>
+=== Metodología DevOps para IA (MLOps) <mlops>
 
-==== Argumento de Autoridad <autoridad-explicita>
+MLOps extiende las prácticas de DevOps al ciclo de vida del machine learning, enfatizando la automatización, monitoreo y mantenimiento de modelos en producción @amazon2024.
 
-Según @mckinsey2023, las empresas que han adoptado inteligencia artificial reportan incrementos promedio del 15% en sus ingresos y reducciones del 20% en costos operativos. El estudio realizado por McKinsey Global Institute sobre más de 2,000 empresas a nivel mundial demuestra que la IA no es solo una tendencia tecnológica, sino una necesidad estratégica para mantener la competitividad.
+*Componentes clave de MLOps:*
 
-De manera complementaria, @harvard2024 sostiene que "las organizaciones que integran efectivamente la ciencia de datos en sus procesos de toma de decisiones experimentan mejoras del 23% en la satisfacción del cliente y del 19% en la retención de talento".
+- *Integración continua (CI)*: Automatización de pruebas de código y modelos
+- *Entrega continua (CD)*: Despliegue automatizado de modelos
+- *Monitoreo continuo (CM)*: Supervisión del rendimiento y deriva de modelos
+- *Versionado de modelos*: Control de versiones para datos, código y modelos
 
-==== Argumento de Ejemplificación <ejemplificacion-explicita>
+=== Metodología Ágil para Proyectos de IA <agil-ia>
 
-Un caso representativo es el de *Netflix*, que utiliza algoritmos de machine learning para personalizar contenido a más de 230 millones de usuarios globalmente. Esta implementación ha resultado en una tasa de retención del 93% y ahorros estimados de 1 billón de dólares anuales al reducir la cancelación de suscripciones @netflix2023.
+La adaptación de metodologías ágiles para proyectos de IA considera las particularidades del desarrollo de modelos de machine learning:
 
-Otro ejemplo destacado es *Amazon*, cuyo sistema de recomendaciones basado en IA genera aproximadamente el 35% de sus ventas totales, demostrando el impacto directo de estas tecnologías en los resultados financieros @amazon2024.
++ *Sprints adaptativos*: Ciclos que permiten experimentación y refinamiento de modelos
++ *Prototipos rápidos*: Desarrollo de MVPs (Minimum Viable Products) para validación temprana
++ *Feedback continuo*: Incorporación constante de retroalimentación de usuarios y stakeholders
++ *Iteración basada en datos*: Refinamiento continuo basado en métricas de rendimiento
 
-==== Argumento de Analogía <analogia-explicita>
+== Principios Éticos en la Implementación de IA <principios-eticos>
 
-La adopción de IA en las organizaciones puede compararse con la revolución industrial del siglo XVIII. Así como las máquinas de vapor transformaron la producción manufacturera, incrementando la productividad en un 300% entre 1760 y 1840, la inteligencia artificial está generando aumentos de eficiencia similares en el siglo XXI.
+=== Marco de Principios Fundamentales <principios-fund>
 
-Las empresas que no adopten estas tecnologías enfrentarán el mismo destino que los artesanos que rechazaron la mecanización: una gradual pérdida de relevancia en el mercado. Estudios comparativos muestran que las organizaciones con alta madurez digital crecen 5 veces más rápido que aquellas con baja adopción tecnológica @digitaltransformation2024.
+Los principios éticos para IA se basan en marcos internacionales y mejores prácticas establecidas @euregulation2024:
+
+==== Beneficencia y No Maleficencia <beneficencia>
+
+*Beneficencia*: Los sistemas de IA deben diseñarse para beneficiar a la humanidad y promover el bienestar social.
+
+*No maleficencia*: "Primero, no hacer daño" - los sistemas de IA no deben causar daño a individuos o sociedades.
+
+Ejemplo de aplicación: En sistemas de recomendación médica, el modelo debe priorizar la seguridad del paciente sobre la optimización de métricas de rendimiento.
+
+==== Autonomía y Dignidad Humana <autonomia>
+
+- Preservación del control humano en decisiones críticas
+- Respeto por la agencia humana y capacidad de elección
+- Transparencia en procesos automatizados
+
+==== Justicia y Equidad <justicia>
+
+La implementación de IA debe garantizar:
+
+/ Equidad distributiva: Beneficios y riesgos distribuidos de manera justa
+/ Equidad procedimental: Procesos de desarrollo y despliegue justos
+/ Equidad correctiva: Mecanismos para corregir sesgos y discriminación
+
+#figure(
+  text(size: 10pt)[
+  #table(
+    columns: (1fr, 2fr, 2fr),
+    table.header([*Tipo de Sesgo*], [*Descripción*], [*Mitigación*]),
+    [Sesgo histórico], [Refleja discriminación pasada en datos], [Auditoría de datos, re-balanceo],
+    [Sesgo de representación], [Subrepresentación de grupos], [Muestreo inclusivo, datos sintéticos],
+    [Sesgo de medición], [Diferencias en calidad de medición], [Estandarización, validación cruzada],
+    [Sesgo de agregación], [Asunción incorrecta de homogeneidad], [Modelado específico por subgrupos],
+    [Sesgo de evaluación], [Métricas inadecuadas para grupos], [Métricas diversificadas, evaluación multi-stakeholder],
+  )],
+  caption: [Tipos de sesgos en IA y estrategias de mitigación.]
+) <sesgos-tabla>
+
+=== Transparencia y Explicabilidad <transparencia>
+
+==== IA Explicable (XAI) <xai>
+
+La explicabilidad en IA es crucial para:
+
+- *Confianza del usuario*: Comprensión de cómo el sistema toma decisiones
+- *Cumplimiento regulatorio*: Satisfacción de requisitos legales de transparencia
+- *Depuración y mejora*: Identificación de problemas en el modelo
+- *Responsabilidad*: Asignación clara de responsabilidades en decisiones automatizadas
+
+*Técnicas de explicabilidad:*
+
++ LIME (Local Interpretable Model-agnostic Explanations)
++ SHAP (SHapley Additive exPlanations)
++ Attention mechanisms en redes neuronales
++ Árboles de decisión interpretables
+
+== Casos de Éxito y Fracasos en Soluciones de IA <casos-estudio>
+
+=== Casos de Éxito <casos-exito>
+
+==== Netflix: Sistema de Recomendación Personalizada <netflix-caso>
+
+*Contexto*: Netflix implementó un sistema de recomendación basado en IA para personalizar contenido @netflix2023.
+
+*Metodología*:
+- Análisis colaborativo y basado en contenido
+- Aprendizaje profundo para patrones complejos
+- A/B testing continuo para optimización
+
+*Resultados*:
+- 80% del contenido visualizado proviene de recomendaciones
+- Ahorro estimado de \$1 billón anual en retención de clientes
+- Mejora significativa en satisfacción del usuario
+
+*Factores de éxito*:
+- Enfoque iterativo y basado en datos
+- Inversión sostenida en infraestructura
+- Cultura organizacional orientada a experimentación
+
+==== Amazon: Algoritmos de Recomendación E-commerce <amazon-caso>
+
+*Impacto*: Los algoritmos de recomendación de Amazon generan aproximadamente 35% de sus ingresos totales @amazon2024.
+
+*Innovaciones clave*:
+- Filtrado colaborativo escalable
+- Recomendaciones en tiempo real
+- Integración multi-canal (web, móvil, Alexa)
+
+=== Casos de Fracaso y Lecciones Aprendidas <casos-fracaso>
+
+==== COMPAS: Sesgo Racial en Predicción de Reincidencia <compas-caso>
+
+*Problemática*: El sistema COMPAS mostró sesgos significativos contra afroamericanos en la predicción de riesgo de reincidencia criminal @propublica2023.
+
+*Hallazgos clave*:
+- Falsos positivos 77% más altos para afroamericanos
+- Falsos negativos 61% más altos para caucásicos
+- Impacto en decisiones judiciales de libertad condicional
+
+*Lecciones aprendidas*:
+- Necesidad de auditorías de equidad regulares
+- Importancia de métricas de fairness específicas
+- Requerimiento de supervisión humana en decisiones críticas
+
+==== Sistemas de Reconocimiento Facial: Sesgos de Género y Raza <facial-recognition>
+
+*Investigación MIT*: Estudio "Gender Shades" reveló disparidades significativas en precisión de sistemas comerciales @mit2024.
+
+*Resultados*:
+- Error 34.7% para mujeres de piel oscura
+- Error 0.8% para hombres de piel clara
+- Sesgos sistemáticos en datasets de entrenamiento
+
+*Implicaciones*:
+- Cuestionamiento de despliegue en aplicaciones críticas
+- Desarrollo de estándares de evaluación más rigurosos
+- Énfasis en diversidad de datos de entrenamiento
+
+=== Factores Críticos de Éxito <factores-exito>
+
+Del análisis de casos se identifican factores críticos:
+
+#figure(
+  text(size: 10pt)[
+  #table(
+    columns: (1fr, 2fr, 1fr),
+    table.header([*Factor*], [*Descripción*], [*Impacto*]),
+    [Calidad de datos], [Datos representativos, limpios y actualizados], [Alto],
+    [Liderazgo organizacional], [Apoyo ejecutivo y visión estratégica clara], [Alto],
+    [Talento especializado], [Equipos multidisciplinarios con expertise en IA], [Alto],
+    [Infraestructura tecnológica], [Plataformas escalables y robustas], [Medio],
+    [Cultura de experimentación], [Tolerancia al fallo y aprendizaje iterativo], [Alto],
+    [Consideraciones éticas], [Evaluación proactiva de impactos sociales], [Crítico],
+    [Monitoreo continuo], [Sistemas de supervisión post-despliegue], [Alto],
+  )],
+  caption: [Factores críticos de éxito en proyectos de IA.]
+) <factores-tabla>
+
+=== Métricas de Evaluación Ética <metricas-eticas>
+
+La evaluación de sistemas de IA debe incluir métricas específicas de equidad y responsabilidad:
+
+*Métricas técnicas de fairness:*
+
+$ "Demographic Parity": P(hat(Y) = 1 | A = 0) = P(hat(Y) = 1 | A = 1) $ <demo-parity>
+
+$ "Equalized Odds": P(hat(Y) = 1 | A = 0, Y = y) = P(hat(Y) = 1 | A = 1, Y = y) $ <equal-odds>
+
+Donde $hat(Y)$ es la predicción, $A$ es el atributo sensible, y $Y$ es la etiqueta verdadera.
+
+*Métricas de impacto social:*
+- Índice de inclusión de stakeholders
+- Medición de impacto en comunidades vulnerables
+- Evaluación de accesibilidad y usabilidad
+- Análisis de consecuencias no intencionadas
