@@ -8,11 +8,11 @@ El proyecto tiene la siguiente estructura de archivos:
 
 ```
 c:\Users\Jerson\Documents\typst\
-├── CPP1_Ruiz_Alva.typ                 # Archivo principal Caso Practico Propuesto (NO EDITAR)
+├── CPP2_Ruiz_Alva.typ                 # Archivo principal Caso Practico Propuesto (NO EDITAR)
 ├── modules/
 │   ├── template.typ                   # Plantilla del proyecto (NO EDITAR)
 │   └── web_resources.typ              # Módulo para recursos web (NO EDITAR)
-├── CPP1_Ruiz_Alva/                   # CARPETA DE TRABAJO (Esta carpeta puede ser CPP1, CPP2, etc. y tener diferentes autores, se te debe indicar el nombre de la carpeta)
+├── CPP2_Ruiz_Alva/                   # CARPETA DE TRABAJO (Esta carpeta puede ser CPP1, CPP2, etc. y tener diferentes autores, se te debe indicar el nombre de la carpeta)
 │   ├── introduction.typ              # EDITABLE - Introducción del documento
 │   ├── part_a.typ                    # EDITABLE - Parte A del contenido
 │   ├── part_b.typ                    # EDITABLE - Parte B del contenido
@@ -23,7 +23,7 @@ c:\Users\Jerson\Documents\typst\
 
 ## INSTRUCCIONES CRÍTICAS PARA EDICIÓN
 
-**SOLO EDITA LOS ARCHIVOS EN LA CARPETA `CPP1_Ruiz_Alva/`:**
+**SOLO EDITA LOS ARCHIVOS EN LA CARPETA `CPP2_Ruiz_Alva/`:**
 
 - `introduction.typ` - Para contenido de introducción
 - `part_a.typ` - Para la primera parte del documento
@@ -167,7 +167,7 @@ Para formas geométricas simples (requiere configuración manual de figuras):
 
 ### OBLIGATORIO: Archivo bibliografia.bib
 
-**SIEMPRE** crea un archivo `bibliografia.bib` con claves numéricas:
+**SIEMPRE** crea un archivo `bibliografia.bib` con claves descriptivas:
 
 ```bib
 @article{clavearticle,
