@@ -18,7 +18,7 @@
       bottom: 3cm,
     )
   )
-  set text(font: "Arial", size: 12pt)
+  set text(font: "Arial", size: 12pt, lang: "es")
   set par(justify: true)
 
   // Configuración de ecuaciones (si se necesitan)
@@ -28,11 +28,10 @@
   set heading(numbering: "1.", supplement: [Sección])
 
   // Configuración de numeración para tablas
-  show figure.where(kind: table): set figure(supplement: [Tabla])
+  //show figure.where(kind: table): set figure(supplement: [Tabla])
 
   // Configuración de numeración para figuras
-  show figure.where(kind: image): set figure(supplement: [Figura])
-
+  //show figure.where(kind: image): set figure(supplement: [Figura])
   
   // Cover page with header and footer
   page(
