@@ -8,11 +8,11 @@ El proyecto tiene la siguiente estructura de archivos:
 
 ```
 c:\Users\Jerson\Documents\typst\
-├── CPP2_Ruiz_Alva.typ                 # Archivo principal Caso Practico Propuesto (NO EDITAR)
+├── CPP3_3_Ruiz_Alva.typ                 # Archivo principal Caso Practico Propuesto (NO EDITAR)
 ├── modules/
 │   ├── template.typ                   # Plantilla del proyecto (NO EDITAR)
 │   └── web_resources.typ              # Módulo para recursos web (NO EDITAR)
-├── CPP2_Ruiz_Alva/                   # CARPETA DE TRABAJO (Esta carpeta puede ser CPP1, CPP2, etc. y tener diferentes autores, se te debe indicar el nombre de la carpeta)
+├── CPP3_3_Ruiz_Alva/                   # CARPETA DE TRABAJO
 │   ├── introduction.typ              # EDITABLE - Introducción del documento
 │   ├── part_a.typ                    # EDITABLE - Parte A del contenido
 │   ├── part_b.typ                    # EDITABLE - Parte B del contenido
@@ -23,7 +23,7 @@ c:\Users\Jerson\Documents\typst\
 
 ## INSTRUCCIONES CRÍTICAS PARA EDICIÓN
 
-**SOLO EDITA LOS ARCHIVOS EN LA CARPETA `CPP2_Ruiz_Alva/`:**
+**SOLO EDITA LOS ARCHIVOS EN LA CARPETA `CPP3_2_Ruiz_Alva/`:**
 
 - `introduction.typ` - Para contenido de introducción
 - `part_a.typ` - Para la primera parte del documento
@@ -33,17 +33,17 @@ c:\Users\Jerson\Documents\typst\
 
 **NO EDITES NUNCA:**
 
-- `CPP2_Ruiz_Alva.typ` (archivo principal)
+- `CPP3_3_Ruiz_Alva.typ` (archivo principal)
 - Archivos en la carpeta `modules/`
 - `INSTRUCTIONS.md`
 
 **CONFIGURACIÓN YA INCLUIDA:**
-El archivo principal (`CPP2_Ruiz_Alva.typ`) ya incluye:
+El archivo principal (`CPP3_3_Ruiz_Alva.typ`) ya incluye:
 
 - Configuración de plantilla con `#import "modules/template.typ"`
 - Configuración del proyecto con títulos, autores, etc.
 - Inclusión automática de todos los archivos de contenido
-- Configuración de bibliografía en estilo IEEE
+- Configuración de bibliografía en estilo APA
 
 ## Instrucciones Generales
 
@@ -214,10 +214,10 @@ Los estudios recientes @bookclave confirman que @clavearticle, @clavemisc muestr
 // main CPP_Apellido_Estudiante.typ
 = Bibliografía
 #bibliography(
-  "CPP3_Ruiz_Alva/bibliografia.bib",
+  "CPP3_2_Ruiz_Alva/bibliografia.bib",
   title: none, 
   full: false, // solo incluir las entradas citadas
-  style: "ieee"
+  style: "apa"
 )
 ```
 
